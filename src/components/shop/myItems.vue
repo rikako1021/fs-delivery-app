@@ -7,7 +7,7 @@
       <div v-for="item in shopItemsArray">
         <div>
           <div class='name'>商品名：{{ item.name }}</div>
-          <div class='image'>{{ item.img }}</div>
+          <p v-if="shopItemsArray"> <img src = 'item.img' /> </p>
           <div class='price'>値段：{{ item.price }}</div>
           <div clasee='others'>出品数：{{ item.stock }}<br/>
           ジャンル：{{ item.type }}</div>
