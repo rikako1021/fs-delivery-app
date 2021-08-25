@@ -5,6 +5,7 @@
       <router-link to="/shop/myShop">店舗情報に行くみたいなボタン</router-link>
       <router-link to="/shop/myItems">商品管理に行くみたいなボタン</router-link>
       <router-link to="/shop/myOrders">注文管理に行くみたいなボタン</router-link>
+
   </div>
 </template>
 
