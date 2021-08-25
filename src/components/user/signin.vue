@@ -1,6 +1,6 @@
 <template>
   <div class="signin">
-    <h2>ログイン</h2>
+    <h2>SIGN IN</h2>
     <input type="text" placeholder="Email" v-model="email">
     <input type="password" placeholder="Password" v-model="password">
     <button @click="signIn">Signin</button>

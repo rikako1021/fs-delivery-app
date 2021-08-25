@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>SING OUT</h1>
+    <h1>SIGN OUT</h1>
     <button @click="singout">Sing out Now!!</button>
   </div>
 </template>

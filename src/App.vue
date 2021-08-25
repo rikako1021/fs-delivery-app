@@ -7,9 +7,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       /*ここから新規追加*/
-      <router-link to="/user/singup">Sing up</router-link> |
-      <router-link to="/user/singin">Sing in</router-link> |
-      <router-link to="/user/singout">Sing out</router-link> |
+      <router-link to="/user/signup">Sign up</router-link> |
+      <router-link to="/user/signin">Sign in</router-link> |
+      <router-link to="/user/signout">Sign out</router-link> |
       <router-link to="/user/userTop">Mypage</router-link> |
     </div>
     <router-view />
