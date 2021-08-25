@@ -4,6 +4,11 @@ import userTop from '../components/user/userTop.vue'
 import signup from '../components/user/signup.vue'
 import signin from '../components/user/signin.vue' 
 import signout from '../components/user/signout'
+import shopTop from '../components/shop/shopTop.vue' 
+import shopsignup from '../components/shop/shopsignup.vue'
+import shopsignin from '../components/shop/shopsignin.vue' 
+import shopsignout from '../components/shop/shopsignout'
+
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -39,6 +44,26 @@ const routes = [
       path: '/user/signout',
       name: 'signout',
       component: signout
+    },
+    {
+      path: '/shop/shopsignout',
+      name: 'shopsignout',
+      component: shopsignout
+    },
+    {
+      path: '/shop/shopsignin',
+      name: 'shopsignin',
+      component: shopsignin
+    },
+    {
+      path: '/shop/shopsignup',
+      name: 'shopsignup',
+      component: shopsignup
+    },
+    {
+      path: '/shop/shopTop',
+      name: 'shopTop',
+      component: shopTop
     },
 
 ];

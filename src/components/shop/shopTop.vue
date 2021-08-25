@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'userTop',
+  name: 'shopTop',
   data () {
     return {
       username: '',
