@@ -11,6 +11,9 @@ import shopsignout from '../components/shop/shopsignout'
 import myShop from '../components/shop/myShop.vue' 
 import myItems from '../components/shop/myItems.vue'
 import myOrders from '../components/shop/myOrders.vue'
+import myPage from '../components/user/myPage.vue'
+import orderHist from '../components/user/orderHist.vue'
+import searchHist from '../components/user/searchHist.vue'
 
 
 import firebase from 'firebase'
@@ -83,7 +86,20 @@ const routes = [
       path: '/shop/myOrders',
       name: 'myorders',
       component: myOrders
-    }
+    },
+    {
+      path: '/user/myPage',
+      name: 'mypage',
+      component: myPage
+    },{
+      path: '/user/orderHist',
+      name: 'orderHist',
+      component: orderHist
+    },{
+      path: '/user/searchHist',
+      name: 'searchhist',
+      component: searchHist
+    },
 
 ];
 const router = new Router({
