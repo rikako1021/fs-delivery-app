@@ -3,9 +3,9 @@
     <h2>ここはログイン後のユーザトップ画面</h2>
     <h1>Hello {{ name }}!!</h1>
     <h1>{{ msg }}</h1>
-      <router-link to="/myPage">マイページに行くみたいなボタン</router-link>
-      <router-link to="/searchItems">注文できる商品を探すみたいなボタン</router-link>
-      <router-link to="/orderHist">注文履歴に飛ぶみたいなボタン</router-link>
+      <router-link to="/user/myPage">マイページに行くみたいなボタン</router-link>
+      <router-link to="/user/searchItems">注文できる商品を探すみたいなボタン</router-link>
+      <router-link to="/user/orderHist">注文履歴に飛ぶみたいなボタン</router-link>
       <button @click="signOut">Sign out</button>
   </div>
 </template>

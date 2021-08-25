@@ -3,7 +3,7 @@
     <h2>SIGN IN</h2>
     <input type="text" placeholder="Email" v-model="email">
     <input type="password" placeholder="Password" v-model="password">
-    <button @click="signIn">Signin</button>
+    <button @click="shopSignIn">Signin</button>
     <p>You don't have an account? 
       <router-link to="/signUp">create account now!!</router-link>
     </p>
@@ -21,13 +21,13 @@ export default {
     }
   },
   methods: {
-    SingIn() {
+    shopSignIn() {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           alert("ログイン成功!");
-          this.$router.push("/shopTop");
+          this.$router.push("/shop/shopTop");
         });
     }}
   }

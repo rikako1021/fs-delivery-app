@@ -3,7 +3,7 @@
     <h2>新規ユーザー登録</h2>
     <input type="text" placeholder="Email" v-model="email">
     <input type="password" placeholder="Password" v-model="password">
-    <button>Register</button>
+    <button　@click="createUserAccount">登録</button>
     <p>Do you have an account? 
       <router-link to="/signin">sign in now!!</router-link>
     </p>
