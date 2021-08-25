@@ -1,7 +1,7 @@
 <template>
   <div class="signin">
     <h2>ログイン</h2>
-    <input type="text" placeholder="Username" v-model="username">
+    <input type="text" placeholder="Email" v-model="email">
     <input type="password" placeholder="Password" v-model="password">
     <button @click="signIn">Signin</button>
     <p>You don't have an account? 
@@ -12,29 +12,25 @@
 
 <script>
 import firebase from 'firebase'
-
 export default {
-  name: 'signIn',
-  data: function () {
+  name: 'singin',
+  data() {
     return {
-      username: '',
-      password: ''
+      email: "",
+      password: ""
     }
   },
   methods: {
-    signIn: function () {
-      firebase.auth().signInWithEmailAndPassword(this.username, this.password).then(
-        user => {
-          alert('Success!')
-          this.$router.push('/')
-        },
-        err => {
-          alert(err.message)
-        }
-      )
-    }
+    SingIn() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          alert("ログイン成功!");
+          this.$router.push("/userTop");
+        });
+    }}
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

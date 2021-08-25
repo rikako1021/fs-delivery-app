@@ -1,53 +1,52 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import userTop from '../components/user/userTop'
-import signUp from '../components/signUp'
-import signIn from '../components/signIn' 
+import userTop from '../components/user/userTop.vue' 
+import signup from '../components/user/signup.vue'
+import signin from '../components/user/signin.vue' 
+import signout from '../components/user/signout'
 import firebase from 'firebase'
 
 Vue.use(Router)
-let router = new Router({
-  routes: [
+const routes = [
+    /*{
+      path: '/',
+      name: 'app',
+      component: App
+    } */
     {
-      path: '*',
-      redirect: 'signIn'
+    path: "/about",
+    name: "About",
+    component: () => 
+    import("../components/user/userTop")
     },
     {
       path: '/user/userTop',
-      name: 'userTop',
+      name: 'usertop',
       component: userTop,
       meta: { requireAuth: true }
     },
     {
-      path: '/signUp',
-      name: 'signUp',
-      component: signUp
+      path: '/user/signup',
+      name: 'signup',
+      component: signup
     },
     {
-      path: '/signIn',
-      name: 'signIn',
-      component: signIn
-    }
-  ]
-})
+      path: '/user/signin',
+      name: 'signin',
+      component: signin
+    },
+    {
+      path: '/user/signout',
+      name: 'signout',
+      component: signout
+    },
 
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some( record => record.meta.requiresAuth)
-  // let currentUser = firebase.auth().currentUser
-  if (requiresAuth) {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        next()
-      } else {
-        next({
-          path: '/signIn',
-          query: { redirect: to.fullPath }
-    })
-  }
-})
-} else {
-  next()
- }
-})
+];
+const router = new Router({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes
+});
 
-export default router
+
+export default router;
