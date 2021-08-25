@@ -3,7 +3,7 @@
     <center>
       <h1>店舗情報</h1></center>
     <body>
-      <div v-for="item in shopsArray">
+      <div v-for="(item, index) in shopsArray" :key="index">
         <div class='shopName'>店の名前：{{ item.name }}</div>
         <div class='others'>
         店のID：{{ item.shopID }}<br/>
