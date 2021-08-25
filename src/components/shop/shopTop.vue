@@ -4,7 +4,7 @@
 
       <router-link to="/myShop">店舗情報に行くみたいなボタン</router-link>
       <router-link to="/myItems">商品管理に行くみたいなボタン</router-link>
-      <router-link to="/myOrders">注文管理に行くみたいなボタン</router-link>
+      <router-link to="/myorders">注文管理に行くみたいなボタン</router-link>
   </div>
 </template>
 

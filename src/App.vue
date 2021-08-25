@@ -9,7 +9,7 @@
       <router-link to="/user/signin">Sign in</router-link> |
       <router-link to="/user/signout">Sign out</router-link> |
       <router-link to="/user/userTop">Mypage</router-link> 
-      <br/><v-spacer/>
+      <br/>
       こっちが店舗側
       <router-link to="/shop/shopsignup">Sign up</router-link> |
       <router-link to="/shop/shopsignin">Sign in</router-link> |
