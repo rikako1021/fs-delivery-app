@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <h2>新規ユーザー登録</h2>
-    <input type="text" placeholder="Username" v-model="username">
+    <input type="text" placeholder="Email" v-model="email">
     <input type="password" placeholder="Password" v-model="password">
     <button>Register</button>
     <p>Do you have an account? 
@@ -14,22 +14,25 @@
 import firebase from 'firebase'
 
 export default {
-  name: 'signUp',
+  name: 'signup',
   data () {
     return {
-      username: '',
+      email: '',
       password: ''
     }
   },
   methods: {
-    signUp: function () {
-      firebase.auth().createUserWithEmailAndPassword(this.username, this.password)
-        .then(user => {
-          alert('Create account: ', user.email)
+    createUserAccount() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          alert("Create Account");
         })
         .catch(error => {
-          alert(error.message)
-        })
+          alert("Error!", error.message);
+          console.error("Account Regeister Error", error.message);
+        });
     }
   }
 }
