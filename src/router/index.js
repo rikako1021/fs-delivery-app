@@ -8,6 +8,10 @@ import shopTop from '../components/shop/shopTop.vue'
 import shopsignup from '../components/shop/shopsignup.vue'
 import shopsignin from '../components/shop/shopsignin.vue' 
 import shopsignout from '../components/shop/shopsignout'
+import myShop from '../components/shop/myShop.vue' 
+import myItems from '../components/shop/myItems.vue'
+import myOrders from '../components/shop/myOrders.vue'
+
 
 import firebase from 'firebase'
 
@@ -62,9 +66,24 @@ const routes = [
     },
     {
       path: '/shop/shopTop',
-      name: 'shopTop',
+      name: 'shoptop',
       component: shopTop
     },
+    {
+      path: '/shop/myShop',
+      name: 'myshop',
+      component: myShop
+    },
+    {
+      path: '/shop/myItems',
+      name: 'myitems',
+      component: myItems
+    },
+    {
+      path: '/shop/myOrders',
+      name: 'myorders',
+      component: myOrders
+    }
 
 ];
 const router = new Router({
