@@ -1,14 +1,16 @@
-<!--店舗情報画面-->
 <template>
-  <center>
-    <h1>店舗情報</h1></center>
-  <HR>
-  <body>
-    <div v-for="(shopID, shopName, shopAddress, phoneNo) in booksArray">
-      店の名前：{{ shopName }}
-      店のID：{{ shopID }}
-    </div>
-  </body>
+  <div>
+    <center>
+      <h1>店舗情報</h1></center>
+    <body>
+      <div v-for="(shopID, shopName, shopAddress, phoneNo) in booksArray">
+        店の名前：{{ shopName }}
+        店のID：{{ shopID }}
+        住所：{{ shopAddress }}
+        電話番号：{{ phoneNo }}
+      </div>
+    </body>
+  </div>
 </template>
 
 <script>
@@ -26,6 +28,7 @@ export default {
       .collection(shops)
       .where('shopID','==','s00001')
     shops.get().then((snapshot) => {
+      console.log(snapshot);
       snapshot.forEach((doc) => {
         const shops = doc.data()
         that.shopsArray = [
@@ -41,3 +44,4 @@ export default {
     })
   }
 }
+</script>
