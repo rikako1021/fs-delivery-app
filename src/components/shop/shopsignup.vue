@@ -3,7 +3,7 @@
     <h2>新規店舗登録</h2>
     <input type="text" placeholder="Email" v-model="email">
     <input type="password" placeholder="Password" v-model="password">
-    <button>Register</button>
+    <button @click="createShopAccount">Register</button>
     <p>Do you have an account? 
       <router-link to="/signin">sign in now!!</router-link>
     </p>
@@ -22,7 +22,7 @@ export default {
     }
   },
   methods: {
-    createUserAccount() {
+    createShopAccount() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
