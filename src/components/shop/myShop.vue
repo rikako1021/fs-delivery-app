@@ -7,6 +7,7 @@
     <div v-for="(shopID, shopName, shopAddress, phoneNo) in booksArray">
       店の名前：{{ shopName }}
       店のID：{{ shopID }}
+      住所：{{ shopAddress }}
     </div>
   </body>
 </template>
