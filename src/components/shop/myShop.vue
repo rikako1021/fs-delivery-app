@@ -3,11 +3,13 @@
     <center>
       <h1>店舗情報</h1></center>
     <body>
-      <div v-for="item in shopsArray">
+      <div v-for="(item, index) in shopsArray" :key="index">
         <div class='shopName'>店の名前：{{ item.name }}</div>
-        <div class='others'>店のID：{{ item.shopID }}<br/>
+        <div class='others'>
+        店のID：{{ item.shopID }}<br/>
         住所：{{ item.shopAddress }}<br/>
-        電話番号：{{ item.phoneNo }}</div>
+        電話番号：{{ item.phoneNo }}
+        </div>
       </div>
     </body>
   </div>
