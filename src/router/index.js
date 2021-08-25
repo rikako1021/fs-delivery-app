@@ -1,53 +1,96 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import userTop from '../components/user/userTop'
-import signUp from '../components/signUp'
-import signIn from '../components/signIn' 
+import userTop from '../components/user/userTop.vue' 
+import signup from '../components/user/signup.vue'
+import signin from '../components/user/signin.vue' 
+import signout from '../components/user/signout'
+import shopTop from '../components/shop/shopTop.vue' 
+import shopsignup from '../components/shop/shopsignup.vue'
+import shopsignin from '../components/shop/shopsignin.vue' 
+import shopsignout from '../components/shop/shopsignout'
+import myShop from '../components/shop/myShop.vue' 
+import myItems from '../components/shop/myItems.vue'
+import myOrders from '../components/shop/myOrders.vue'
+
+
 import firebase from 'firebase'
 
 Vue.use(Router)
-let router = new Router({
-  routes: [
+const routes = [
+    /*{
+      path: '/',
+      name: 'app',
+      component: App
+    } */
     {
-      path: '*',
-      redirect: 'signIn'
+    path: "/about",
+    name: "About",
+    component: () => 
+    import("../components/user/userTop")
     },
     {
       path: '/user/userTop',
-      name: 'userTop',
+      name: 'usertop',
       component: userTop,
       meta: { requireAuth: true }
     },
     {
-      path: '/signUp',
-      name: 'signUp',
-      component: signUp
+      path: '/user/signup',
+      name: 'signup',
+      component: signup
     },
     {
-      path: '/signIn',
-      name: 'signIn',
-      component: signIn
+      path: '/user/signin',
+      name: 'signin',
+      component: signin
+    },
+    {
+      path: '/user/signout',
+      name: 'signout',
+      component: signout
+    },
+    {
+      path: '/shop/shopsignout',
+      name: 'shopsignout',
+      component: shopsignout
+    },
+    {
+      path: '/shop/shopsignin',
+      name: 'shopsignin',
+      component: shopsignin
+    },
+    {
+      path: '/shop/shopsignup',
+      name: 'shopsignup',
+      component: shopsignup
+    },
+    {
+      path: '/shop/shopTop',
+      name: 'shoptop',
+      component: shopTop
+    },
+    {
+      path: '/shop/myShop',
+      name: 'myshop',
+      component: myShop
+    },
+    {
+      path: '/shop/myItems',
+      name: 'myitems',
+      component: myItems
+    },
+    {
+      path: '/shop/myOrders',
+      name: 'myorders',
+      component: myOrders
     }
-  ]
-})
 
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some( record => record.meta.requiresAuth)
-  // let currentUser = firebase.auth().currentUser
-  if (requiresAuth) {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        next()
-      } else {
-        next({
-          path: '/signIn',
-          query: { redirect: to.fullPath }
-    })
-  }
-})
-} else {
-  next()
- }
-})
+];
+const router = new Router({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes
+});
 
-export default router
+
+export default router;

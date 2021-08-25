@@ -1,7 +1,22 @@
+
+    
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <div id="nav">
+      こっちはユーザ側ね
+      <router-link to="/user/signup">Sign up</router-link> |
+      <router-link to="/user/signin">Sign in</router-link> |
+      <router-link to="/user/signout">Sign out</router-link> |
+      <router-link to="/user/userTop">Mypage</router-link> 
+      <br/>
+      こっちが店舗側
+      <router-link to="/shop/shopsignup">Sign up</router-link> |
+      <router-link to="/shop/shopsignin">Sign in</router-link> |
+      <router-link to="/shop/shopsignout">Sign out</router-link> |
+      <router-link to="/shop/shopTop">shoppage</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
@@ -10,7 +25,6 @@
 export default {
   name: 'App',
   components: {
-    
   }
 }
 </script>
