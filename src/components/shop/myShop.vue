@@ -3,11 +3,11 @@
     <center>
       <h1>店舗情報</h1></center>
     <body>
-      <div v-for="(shopID, shopName, shopAddress, phoneNo) in booksArray">
-        店の名前：{{ shopName }}
-        店のID：{{ shopID }}
-        住所：{{ shopAddress }}
-        電話番号：{{ phoneNo }}
+      <div v-for="item in shopsArray">
+        <div class='shopName'>店の名前：{{ item.name }}</div>
+        <div class='others'>店のID：{{ item.shopID }}<br/>
+        住所：{{ item.shopAddress }}<br/>
+        電話番号：{{ item.phoneNo }}</div>
       </div>
     </body>
   </div>
@@ -25,7 +25,7 @@ export default {
     const that = this
     const shops = firebase
       .firestore()
-      .collection(shops)
+      .collection('shops')
       .where('shopID','==','s00001')
     shops.get().then((snapshot) => {
       console.log(snapshot);
