@@ -1,21 +1,51 @@
 <template>
+<div id="userTop">
   <div class="signup">
-    <h2>ここはログイン後のユーザトップ画面</h2>
-    <h1>Hello {{ name }}!!</h1>
-    <h1>{{ msg }}</h1>
-    <button @click="toMyPage">マイページへ</button>
-    <button @click="toItemsSearch">商品検索</button>
-    <button @click="toOrderHist">注文履歴</button>
-      <button @click="signOut">Sign out</button>
+    <h1>こんにちは  rikako240@gmail.com <!--{{ name }}-->さん</h1>
+    <br/>
+    <h3>お腹が空いたら料理を注文して、フードロス削減に貢献しませんか？<!--{{ msg }}--></h3>
+    <div class="toItemSearch">
+    <button @click="toItemSearch">
+      <img src="../../assets/icon1.png"><br/>
+        <h2>商品検索</h2>
+    </button>
+    </div>
+    <div class="other">
+    <div class="toMyPage">
+    <button @click="toMyPage">
+      <img src="../../assets/icon2.png"><br/>
+      マイページ
+    </button>
+    </div>
+    <div class="toOrderHist">
+    <button @click="toOrderHist">
+      <img src="../../assets/icon3.png"><br/>
+      注文履歴
+    </button>
+    </div>
+    </div>
+    <div class="other">
+    <div class="signout">
+    <button @click="signOut">
+      ログアウト
+    </button>
+    </div>
+    <div class="none">
+
+    </div>
+    </div>
+    </div>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase'
 export default {
   name: 'userTop',
+
   data () {
     return {
-      msg: 'Welcome to サービス名',
+      msg: 'お腹が空いたら料理を注文して、フードロス削減に貢献しませんか？',
       name: firebase.auth().currentUser.email
     }
   },
@@ -30,7 +60,7 @@ export default {
       location.reload();
     },
     toItemSearch(){
-      this.$router.push("/user/itemSearch");
+      this.$router.push("/user/searchItems");
       location.reload();
     },
     toOrderHist(){
@@ -43,7 +73,7 @@ export default {
 
 <style scoped>
 h1, h2 {
-  font-weight: normal;
+  font-size: 150%;
 }
 ul {
   list-style-type: none;
@@ -51,13 +81,13 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 0px;
 }
 a {
   color: #42b983;
 }
 .signup {
-  margin-top: 20px;
+  margin-top: 0px;
 
   display: flex;
   flex-flow: column nowrap;
@@ -67,5 +97,75 @@ a {
 input {
   margin: 10px 0;
   padding: 10px;
+}
+.toItemSearch {
+  background-color: rgba(18, 95, 63, 0.966);
+  padding:40px;
+  padding-top: 50px;
+  margin: 25px;
+  width: 90%;
+  border-radius: 40px;
+  box-shadow: 0px 0px 8px 0px gray;
+}
+button {
+  font-size: 120%;
+  background-color: initial;
+  border: none;
+  font-family: "Hiragino Maru Gothic ProN W4";
+  font-size: 160%;
+  color: aliceblue;
+  font-weight: bold;
+}
+#userTop{
+  font-family: "Hiragino Maru Gothic ProN W4";
+  margin-top: 100px;
+}
+
+.signout {
+  background-color: rgb(71, 168, 155);
+  padding:20px;
+  margin: 25px;
+  width: 60%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 8px 0px gray;
+}
+.none {
+  background-color: rgb(182, 182, 182);
+  padding:20px;
+  margin: 25px;
+  width: 60%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 8px 0px gray;
+}
+.toMyPage {
+  background-color: rgb(50, 114, 105);
+  padding:30px;
+  margin: 25px;
+  width: 60%;
+  border-radius: 40px;
+  padding-top: 8%;
+  box-shadow: 0px 0px 8px 0px gray;
+}
+.toOrderHist {
+  background-color: rgba(20, 167, 105, 0.966);
+  padding:30px;
+  margin: 25px;
+  width: 60%;
+  border-radius: 40px;
+  box-shadow: 0px 0px 8px 0px gray;
+  padding-top: 8%;
+}
+.other {
+  display: flex;
+  margin: 1px;
+  width: 95%;
+  margin-bottom: 0.1%;
+}
+.signup {
+  line-height: 150%;
+}
+h3 {
+  font-size: 120%;
+  line-height: 150%;
 }
 </style>

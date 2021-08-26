@@ -8,10 +8,10 @@
         <input type="text" placeholder="キーワード" v-model="keyword">
         <button @click="filteredItems" type="button">商品検索</button>
         <body>
-          <div v-for="item in filteredItems" :key="item.itemID">
+          <div v-for="(item, index) in filteredItems" :key="index">
             <div>
               <div class='name' v-if="itemsArray">商品名：{{ item.name }}</div>
-              <p v-if="itemsArray"> <img v-bind:src = "item.image"></img></p>
+              <p v-if="itemsArray"> <img v-bind:src = "item.image"/></p>
               <div class='price'>値段：{{ item.price }}</div>
               <div class='others'>出品数：{{ item.stock }}<br/>
               ジャンル：{{ item.type }}<br>
