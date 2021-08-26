@@ -5,7 +5,6 @@ import signup from '../components/user/signup.vue'
 import signin from '../components/user/signin.vue' 
 import signout from '../components/user/signout'
 import shopTop from '../components/shop/shopTop.vue' 
-import shopsignup from '../components/shop/shopsignup.vue'
 import shopsignin from '../components/shop/shopsignin.vue' 
 import shopsignout from '../components/shop/shopsignout'
 import myShop from '../components/shop/myShop.vue' 
@@ -14,6 +13,7 @@ import myOrders from '../components/shop/myOrders.vue'
 import myPage from '../components/user/myPage.vue'
 import orderHist from '../components/user/orderHist.vue'
 import searchHist from '../components/user/searchHist.vue'
+import shopEnter from '../components/shop/shopEnter.vue'
 
 
 import firebase from 'firebase'
@@ -63,11 +63,6 @@ const routes = [
       component: shopsignin
     },
     {
-      path: '/shop/shopsignup',
-      name: 'shopsignup',
-      component: shopsignup
-    },
-    {
       path: '/shop/shopTop',
       name: 'shoptop',
       component: shopTop
@@ -99,7 +94,11 @@ const routes = [
       path: '/user/searchHist',
       name: 'searchhist',
       component: searchHist
-    },
+    },{
+      path: '/shop/shopEnter',
+      name: 'shopenter',
+      component: shopEnter
+    }
 
 ];
 const router = new Router({

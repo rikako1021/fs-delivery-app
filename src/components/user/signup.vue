@@ -12,6 +12,7 @@
 
 <script>
 import firebase from 'firebase'
+import 'bulma/css/bulma.css';
 
 export default {
   name: 'signup',

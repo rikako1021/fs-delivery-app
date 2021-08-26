@@ -3,7 +3,7 @@
     <center>
       <h1>注文一覧</h1></center>
     <body>
-      <div v-for="item in orderItemsArray">
+      <div v-for="(item, index) in orderItemsArray" :key="index">
         <div>
           <div class='name' v-if="shopItemsArray">商品名：{{ item.name }}</div>
           <p v-if="shopItemsArray"> <img src = 'item.img' /> </p>
