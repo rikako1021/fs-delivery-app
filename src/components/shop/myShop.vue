@@ -13,6 +13,8 @@
         </div>
       </div>
     </body>
+    <div class='backHome'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
   </div>
 </template>
 
