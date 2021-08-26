@@ -15,7 +15,7 @@
       <br/>
 
     <router-link to="/shop/shopEnter">
-    <a href="/shop/shopEnter">
+    <a @click="toShopLogin">
     <div class="shop">
       <h4 class="title">
         飲食店の方はこちら
