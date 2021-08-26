@@ -16,7 +16,7 @@
               <div class='others'>出品数：{{ item.stock }}<br/>
               ジャンル：{{ item.type }}<br>
               フードロス[g]：{{ item.weight }}<br>
-              <button @click="stackItem(item)" type="button">+ボタン</button></div>
+              <button @click="stackItem(item)" type="button">+</button></div>
             </div>
           </div>
         </body>
