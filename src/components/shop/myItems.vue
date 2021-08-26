@@ -9,7 +9,7 @@
       <div v-for="(item, index) in shopItemsArray" :key="index" >
         <div>
           <div class='name'><p v-if="shopItemsArray">商品名：{{ item.name }}</p></div>
-          <p v-if="shopItemsArray"> <img src = 'https://firebasestorage.googleapis.com/v0/b/fs-delivery-app.appspot.com/o/%E5%94%90%E6%8F%9A%E3%81%92%E5%BC%81%E5%BD%93.jpg?alt=media&token=5da8fcae-1fb9-4551-89e8-12ae69eacc41' /> </p>
+          <p v-if="shopItemsArray"> <img v-bind:src = "item.img"></img> </p>
           <div class='price'>値段：{{ item.price }}</div>
           <div clasee='others'>出品数：{{ item.stocks }}<br/>
           ジャンル：{{ item.type }}</div>
@@ -94,7 +94,8 @@ export default {
           price: this.inputPrice,
           stocks: this.inputStock,
           type: this.inputType,
-          weight: this.inputWeight
+          weight: this.inputWeight,
+          image: "https://firebasestorage.googleapis.com/v0/b/fs-delivery-app.appspot.com/o/%E3%82%B5%E3%83%B3%E3%83%89%E3%82%A6%E3%82%A3%E3%83%83%E3%83%81.png?alt=media&token=a79dbbb2-ba86-49dd-97a0-432014eb76bd"
         })
         .then(() => {
           console.log("Document successfully written!");
