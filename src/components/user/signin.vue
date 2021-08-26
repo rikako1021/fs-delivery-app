@@ -33,6 +33,7 @@ export default {
         .then(() => {
           alert("ログイン成功!");
           this.$router.push("/user/userTop");
+          location.reload();
         });
     }}
   }
