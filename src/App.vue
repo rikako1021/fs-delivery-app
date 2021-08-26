@@ -15,12 +15,13 @@
       <br/>
 
     <router-link to="/shop/shopEnter">
-    <a @click="toShopLogin">
+    <!-- <a @click="toShopLogin"> -->
     <div class="shop">
       <h4 class="title">
         飲食店の方はこちら
       </h4>
-    </div></a>
+    </div>
+    <!-- </a> -->
     </router-link><router-view/> 
 
       
