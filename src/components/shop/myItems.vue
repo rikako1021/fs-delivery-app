@@ -1,6 +1,9 @@
 <!--商品一覧画面-->
 <template>
   <div>
+    <div　class='backHomeTop'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
     <center>
       <h1>出品一覧</h1></center>
     <body>
@@ -21,10 +24,15 @@
         <input v-model="inputPrice" placeholder="値段"><br/>
         <input v-model="inputStock" placeholder="個数"><br/>
         <input v-model="inputType" placeholder="ジャンル"><br/>
+        <input v-model="inputWeight" placeholder="重量(g)"><br/>
         <button type="submit" @click.prevent="newItem">出品</button>
       </form>
     </body>
+    <div　class='backHomeBottom'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -85,11 +93,12 @@ export default {
           shopID: "s00001",
           price: this.inputPrice,
           stocks: this.inputStock,
-          type: this.inputType
+          type: this.inputType,
+          weight: this.inputWeight
         })
         .then(() => {
           console.log("Document successfully written!");
-          alert("追加しました")
+          alert("出品しました")
           location.reload();
         })
         .catch((error) => {
