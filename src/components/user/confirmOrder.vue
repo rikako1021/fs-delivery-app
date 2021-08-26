@@ -5,7 +5,7 @@
         <center>
         <h1>注文確認</h1></center>
         <button @click="returnTop" type="button">ホーム</button><br>
-        <!--button @click="goBack" type="button">買い物を続ける</button--><br>
+        <button @click="goBack" type="button">買い物を続ける</button><br>
         <body>
           <div v-for="item in cartItems" :key="item.itemID">
             <div>
