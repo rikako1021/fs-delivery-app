@@ -31,7 +31,7 @@
     </button>
     </div>
     <div class="none">
-
+      防いだフードロス：600g!!
     </div>
     </div>
     </div>
@@ -42,11 +42,10 @@
 import firebase from 'firebase'
 export default {
   name: 'userTop',
-
   data () {
     return {
       msg: 'お腹が空いたら料理を注文して、フードロス削減に貢献しませんか？',
-      name: firebase.auth().currentUser.email
+      name: firebase.auth().currentUser.email,
     }
   },
   methods: {
