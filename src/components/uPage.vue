@@ -1,31 +1,46 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <Upage></Upage>
-    <Spage></Spage>
+    <img src="../assets/logo.png">
+    <div class="user">
+      <h4 class="title">個人ユーザの方</h4>
+      <!-- <router-link to="/user/signin">サインイン</router-link>  -->
+      <UserSignin></UserSignin>
       <br/><br/>
+      <h3>初めてご利用になる方は
+      <router-link to="/user/signup">こちら</router-link></h3>
       
     </div>
-      <!-- <router-link to="/uPage">Sign in</router-link> -->
+      <!-- <router-link to="/user/signout">Sign out</router-link> | -->
       <!-- <router-link to="/user/userTop">Mypage</router-link>  -->
+      <br/>
 
-    <!-- <router-view/> -->
+    
+    <div class="shop">
+        <button @click="toSPage">
+      <h4 class="title">
+        飲食店の方はこちら
+      </h4>
+      </button>
+    </div>
       
       <!-- <router-link to="/shop/shopsignout">Sign out</router-link> | -->
       
+  </div>
 </template>
 
 <script>
-import Upage from './components/uPage.vue'
-import Spage from './components/sPage.vue'
-import Signin from './components/user/signin.vue'
+import UserSignin from './user/signin.vue'
 
 export default {
-  name: 'App',
+  name: 'upage',
   components: {
-    Signin,
-    Upage,
-    Spage
+    UserSignin
+  },
+  methods: {
+      toSPage(){
+      this.$router.push("/sPage");
+      location.reload();
+    }
   }
 }
 </script>

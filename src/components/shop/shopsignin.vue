@@ -25,7 +25,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           alert("ログイン成功!");
-          this.$router.push("/shop/shopTop");
+          this.$router.push("/shopTop");
         });
     }}
   }

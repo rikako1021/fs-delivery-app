@@ -16,6 +16,8 @@ import searchItems from '../components/user/searchItems.vue'
 import shopEnter from '../components/shop/shopEnter.vue'
 import confirmOrder from '../components/user/confirmOrder.vue'
 import finishOrder from '../components/user/finishOrder.vue'
+import uPage from '../components/uPage.vue'
+import sPage from '../components/sPage.vue'
 
 
 import firebase from 'firebase'
@@ -88,26 +90,41 @@ const routes = [
       path: '/user/myPage',
       name: 'mypage',
       component: myPage
-    },{
+    },
+    {
       path: '/user/orderHist',
       name: 'orderHist',
       component: orderHist
-    },{
+    },
+    {
       path: '/user/searchItems',
       name: 'searchitems',
       component: searchItems
-    },{
+    },
+    {
       path: '/shop/shopEnter',
       name: 'shopenter',
       component: shopEnter
-    },{
+    },
+    {
       path: '/user/confirmOrder',
       name: 'confirmorder',
       component: confirmOrder
-    },{
+    },
+    {
       path: '/user/finishOrder',
       name: 'finishorder',
       component: finishOrder
+    },
+    {
+      path: '/sPage',
+      name: 'spage',
+      component: sPage
+    },
+    {
+      path: '/uPage',
+      name: 'upage',
+      component: uPage
     }
 
 ];

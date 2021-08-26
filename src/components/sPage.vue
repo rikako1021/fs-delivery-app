@@ -1,31 +1,44 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <Upage></Upage>
-    <Spage></Spage>
-      <br/><br/>
-      
-    </div>
-      <!-- <router-link to="/uPage">Sign in</router-link> -->
-      <!-- <router-link to="/user/userTop">Mypage</router-link>  -->
-
-    <!-- <router-view/> -->
+    <img src="../assets/logo.png">
+    <div class="shop">
+      <h4 class="title">飲食店の方</h4>
+      <Signin></Signin>
+      <br/>
+      <p>mottaiGOを導入する</p>
+      <router-link to="/shop/shopsignup">利用申請</router-link>
+    </div> 
       
       <!-- <router-link to="/shop/shopsignout">Sign out</router-link> | -->
       
+    <div class="user">
+      <button @click="toUPage">
+      <h4 class="title">個人ユーザの方はこちら</h4>
+      </button>
+      <!-- <router-link to="/user/signin">サインイン</router-link>  -->
+    </div>
+      <!-- <router-link to="/user/signout">Sign out</router-link> | -->
+      <!-- <router-link to="/user/userTop">Mypage</router-link>  -->
+      <br/>
+
+  </div>
 </template>
 
 <script>
-import Upage from './components/uPage.vue'
-import Spage from './components/sPage.vue'
-import Signin from './components/user/signin.vue'
+import Signin from './shop/shopsignin.vue'
 
 export default {
-  name: 'App',
+  name: 'spage',
+  data () {
+  },
   components: {
-    Signin,
-    Upage,
-    Spage
+    Signin
+  },
+  methods: {
+    toUPage(){
+      this.$router.push("/uPage");
+      location.reload();
+    }
   }
 }
 </script>
