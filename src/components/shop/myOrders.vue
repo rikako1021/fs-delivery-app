@@ -1,47 +1,50 @@
 <template>
   <div>
+    <div　class='backHomeTop'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
     <center>
       <h1>注文一覧</h1></center>
     <body>
-      <div v-for="(item, index) in orderItemsArray" :key="index">
+      <div v-for="item in orderItemsArray" :key="item">
         <div>
-          <div class='name' v-if="shopItemsArray">商品名：{{ item.name }}</div>
-          <p v-if="shopItemsArray"> <img src = 'item.img' /> </p>
-          <div class='price'>値段：{{ item.price }}</div>
-          <div clasee='others'>出品数：{{ item.stock }}<br/>
-          ジャンル：{{ item.type }}</div>
+          <div class='name' v-if="orderItemsArray">商品名：{{ item.name }}</div>
+          <div class='price'>時間：{{ item.time }}</div>
+          <div clasee='others'>注文数：{{ item.quantity }}<br/>
+          注文した人：{{ item.user }}</div>
         </div>
       </div>
     </body>
+    <div　class='backHomeBottom'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
   </div>
 </template>
-
 <script>
 import firebase from 'firebase'
 export default {
   data() {
     return {
-      shopItemsArray: [],
+      orderItemsArray: [],
     }
   },
   created(){
     const that = this
-    const shopItems = firebase
+    const orderItems = firebase
       .firestore()
       .collection('orders')
       .where('shopID','==','s00001')
-    shopItems.get().then((snapshot) => {
+    orderItems.get().then((snapshot) => {
       snapshot.forEach((doc) => {
-        const shopItems = doc.data()
-        that.shopItemsArray = [
-          ...that.shopItemsArray,
+        const orderItems = doc.data()
+        that.orderItemsArray = [
+          ...that.orderItemsArray,
           {
-            name: shopItems.description,
-            type: shopItems.type,
-            itemID: shopItems.itemID,
-            stocks: shopItems.stocks,
-            price: shopItems.price,
-            img: shopItems.image,
+            name: orderItems.description,
+            time: orderItems.time,
+            itemID: orderItems.itemID,
+            quantity: orderItems.quantity,
+            user: orderItems.userID,
           },
         ]
       })
