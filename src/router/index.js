@@ -1,19 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import userTop from '../components/user/userTop.vue' 
+import userTop from '../components/user/userTop.vue'
 import signup from '../components/user/signup.vue'
-import signin from '../components/user/signin.vue' 
+import signin from '../components/user/signin.vue'
 import signout from '../components/user/signout'
-import shopTop from '../components/shop/shopTop.vue' 
-import shopsignin from '../components/shop/shopsignin.vue' 
+import shopTop from '../components/shop/shopTop.vue'
+import shopsignin from '../components/shop/shopsignin.vue'
 import shopsignout from '../components/shop/shopsignout'
-import myShop from '../components/shop/myShop.vue' 
+import myShop from '../components/shop/myShop.vue'
 import myItems from '../components/shop/myItems.vue'
 import myOrders from '../components/shop/myOrders.vue'
 import myPage from '../components/user/myPage.vue'
 import orderHist from '../components/user/orderHist.vue'
 import searchItems from '../components/user/searchItems.vue'
 import shopEnter from '../components/shop/shopEnter.vue'
+import confirmOrder from '../components/user/confirmOrder.vue'
+import finishOrder from '../components/user/finishOrder.vue'
 
 
 import firebase from 'firebase'
@@ -28,7 +30,7 @@ const routes = [
     {
     path: "/about",
     name: "About",
-    component: () => 
+    component: () =>
     import("../components/user/userTop")
     },
     {
@@ -92,12 +94,20 @@ const routes = [
       component: orderHist
     },{
       path: '/user/searchItems',
-      name: 'searchItems',
+      name: 'searchitems',
       component: searchItems
     },{
       path: '/shop/shopEnter',
       name: 'shopenter',
       component: shopEnter
+    },{
+      path: '/user/confirmOrder',
+      name: 'confirmorder',
+      component: confirmOrder
+    },{
+      path: '/user/finishOrder',
+      name: 'finishorder',
+      component: finishOrder
     }
 
 ];
