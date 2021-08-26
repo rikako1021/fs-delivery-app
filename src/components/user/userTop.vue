@@ -3,9 +3,9 @@
     <h2>ここはログイン後のユーザトップ画面</h2>
     <h1>Hello {{ name }}!!</h1>
     <h1>{{ msg }}</h1>
-      <router-link to="/user/myPage">マイページに行くみたいなボタン</router-link>
-      <router-link to="/user/searchItems">注文できる商品を探すみたいなボタン</router-link>
-      <router-link to="/user/orderHist">注文履歴に飛ぶみたいなボタン</router-link>
+    <button @click="toMyPage">マイページへ</button>
+    <button @click="toItemsSearch">商品検索</button>
+    <button @click="toOrderHist">注文履歴</button>
       <button @click="signOut">Sign out</button>
   </div>
 </template>
@@ -24,6 +24,18 @@ export default {
       firebase.auth().signOut().then(() => {
         this.$router.push('../signIn')
       })
+    },
+    toMyPage(){
+      this.$router.push("/user/myPage");
+      location.reload();
+    },
+    toItemSearch(){
+      this.$router.push("/user/itemSearch");
+      location.reload();
+    },
+    toOrderHist(){
+      this.$router.push("/user/orderHist");
+      location.reload();
     }
   }
 }
