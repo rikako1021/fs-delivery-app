@@ -8,10 +8,10 @@
     <body>
       <div v-for="item in orderItemsArray" :key="item">
         <div>
-          <div class='name' v-if="orderItemsArray">商品名：{{ item.name }}</div>
-          <div class='price'>時間：{{ item.time }}</div>
-          <div clasee='others'>注文数：{{ item.quantity }}<br/>
-          注文した人：{{ item.user }}</div>
+          <div class='name' v-if="orderItemsArray" id="container1"><span id="itemA">商品名</span><span id="itemB">{{ item.name }}</span></div>
+          <div class='price' id="container2"><span id="itemC">時間</span><span id="itemD">{{ item.time }}</span></div>
+          <div class='others' id="container3"><span id="itemE">注文数</span><span id="itemF">{{ item.quantity }}</span>
+          <span id="itemG">注文した人</span><span id="itemH">{{ item.user }}</span></div>
         </div>
       </div>
     </body>
@@ -52,3 +52,165 @@ export default {
   }
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-size: 400%;
+  font-weight: bold;
+  color: #42b983;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 130%;
+  font-size: 145%;
+  box-shadow: 0px 0px 5px rgb(56, 56, 56) inset;
+  border: none;
+  border-radius: 6px;
+}
+td {
+    padding: 30px;
+    border-bottom: 1px solid #EEE;
+    padding-right: 80px;
+    border: none;
+}
+tr {
+  margin-right: 10px;
+  text-align: center;
+}
+input {
+  margin: 10px 0;
+  padding: 10px;
+}
+button {
+  font-size: 120%;
+  padding: 30px;
+  margin-left: 50;
+  box-shadow: 1px 1px 5px 3px rgb(173, 173, 173);
+  border: none;
+  width: 50%;
+}
+button h2 {
+  font-family: "Hiragino Maru Gothic ProN W4";
+  font-weight: bold;
+}
+.name {
+  font-size: 300%;
+  font-weight: normal;
+}
+.price {
+  font-size: 300%;
+  font-weight: normal;
+}
+.others {
+  font-size: 300%;
+  font-weight: normal;
+}
+.backHomeTop {
+  padding: 25px;
+  color: rgb(0, 0, 0);
+  font-size: 160%;
+  border-radius: 40px;
+  padding: 50px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(18, 95, 63);
+  box-shadow: 0px 0px 5px 0px gray;
+}
+.backHomeBottom {
+  padding: 25px;
+  color: rgb(0, 0, 0);
+  font-size: 160%;
+  border-radius: 40px;
+  padding: 50px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(18, 95, 63);
+  box-shadow: 0px 0px 5px 0px gray;
+}
+#container1 {
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: 300px 1fr;
+}
+#itemA {
+  grid-row: 1;
+  grid-column: 1;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemB {
+  grid-row: 1;
+  grid-column: 2;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#container2 {
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: 300px 1fr;
+}
+#itemC {
+  grid-row: 1;
+  grid-column: 1;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemD {
+  grid-row: 1;
+  grid-column: 2;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#container3 {
+  display: grid;
+  grid-template-rows: 80px 80px;
+  grid-template-columns: 300px 1fr;
+}
+#itemE {
+  grid-row: 1;
+  grid-column: 1;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemF {
+  grid-row: 1;
+  grid-column: 2;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemG {
+  grid-row: 2;
+  grid-column: 1;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+}
+#itemH {
+  grid-row: 2;
+  grid-column: 2;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+</style>
