@@ -148,11 +148,11 @@ button h2 {
 #container1 {
   display: grid;
   grid-template-rows: 80px;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px 300px 1fr 300px;
 }
 #itemA {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 2;
   border-top: 3px solid;
   border-left: 3px solid;
   border-right: 3px solid;
@@ -160,7 +160,7 @@ button h2 {
 }
 #itemB {
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 3;
   border-top: 3px solid;
   border-right: 3px solid;
   border-bottom: 3px solid;
@@ -168,49 +168,49 @@ button h2 {
 #container2 {
   display: grid;
   grid-template-rows: 80px;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px 300px 1fr 300px;
 }
 #itemC {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 2;
   border-left: 3px solid;
   border-right: 3px solid;
   border-bottom: 3px solid;
 }
 #itemD {
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 3;
   border-right: 3px solid;
   border-bottom: 3px solid;
 }
 #container3 {
   display: grid;
-  grid-template-rows: 80px 80px;
-  grid-template-columns: 300px 1fr;
+  grid-template-rows: 80px 80px 100px;
+  grid-template-columns: 300px 300px 1fr 300px;
 }
 #itemE {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 2;
   border-left: 3px solid;
   border-right: 3px solid;
   border-bottom: 3px solid;
 }
 #itemF {
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 3;
   border-right: 3px solid;
   border-bottom: 3px solid;
 }
 #itemG {
   grid-row: 2;
-  grid-column: 1;
+  grid-column: 2;
   border-left: 3px solid;
   border-bottom: 3px solid;
   border-right: 3px solid;
 }
 #itemH {
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 3;
   border-right: 3px solid;
   border-bottom: 3px solid;
 }

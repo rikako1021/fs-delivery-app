@@ -12,19 +12,21 @@
           <button class = "button"　type="submit" @click.prevent="newItem">出品</button>
           <hr>
     </form>
+      <div class = "items">
+        <center>
+        <h1>出品一覧</h1></center>
 
-      <center>
-      <h1>出品一覧</h1></center>
-
-      <div v-for="(item, index) in shopItemsArray" :key="index" class = 'sale'>
-          <div>
-            <p v-if="shopItemsArray"> <img v-bind:src = "item.img"></img> </p>
-            <div class='name'>
-            <p v-if="shopItemsArray">{{ item.name }}</p>
-            値段：￥{{ item.price }}　出品数：{{ item.stocks }}個
+        <div v-for="(item, index) in shopItemsArray" :key="index" class = 'sale'>
+            <div>
+                <p v-if="shopItemsArray"></p>
+                <img v-bind:src = "item.img"class="float_l"></img>
+                <div class='name'>
+                  <p v-if="shopItemsArray">{{ item.name }}</p>
+                  値段：￥{{ item.price }}　出品数：{{ item.stocks }}個<br/>
+                  <button class = "button" @click="deleteItem">出品取り消し</button>
+                </div>
             </div>
-            <button class = "button" @click="deleteItem">出品取り消し</button>
-          </div>
+        </div>
       </div>
 
       <HR></HR>
@@ -137,8 +139,14 @@ a {
 }
 .sale {
   font-size:20px;
-  //float: left;
-  //width: 360px;
+  margin: auto;
+  padding: 100px;
+  padding-left: 30%;
+  padding-bottom: 0px;
+}
+
+.items{
+  margin-bottom: 10%;
 }
 
 
@@ -155,6 +163,7 @@ a {
 border-radius: 40px;
   padding: 50px;
   margin: 25px;
+  margin-bottom: 5%;
   padding-top: 10px;
   padding-bottom: 10px;
   border-style: solid;
@@ -196,10 +205,18 @@ font-family: "Roboto", sans-serif;
     font-family: "Open Sans", sans-serif;
     text-align: center;
     background: $headerbg;
+    margin: 0px auto;
+    margin-right: 30%;
+    padding-top:40px;
+    line-height: 200%;
 }
 
 hr{
   border-top: 3px dashed;
+}
+
+.float_l {
+	float: left;
 }
 
 
