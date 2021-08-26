@@ -6,7 +6,7 @@
     <center>
       <h1>注文一覧</h1></center>
     <body>
-      <div v-for="(item, index) in orderItemsArray" :key="index">
+      <div v-for="item in orderItemsArray" :key="item">
         <div>
           <div class='name' v-if="orderItemsArray">商品名：{{ item.name }}</div>
           <div class='price'>時間：{{ item.time }}</div>
@@ -20,7 +20,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import firebase from 'firebase'
 export default {

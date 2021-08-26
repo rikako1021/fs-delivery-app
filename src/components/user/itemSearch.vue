@@ -39,8 +39,8 @@ export default {
     }
   },
   created() {
-    const db = firebase.firestore()
     /* 全てのドキュメントを配列に代入 */
+    const db = firebase.firestore()
     db.collection("items").get().then((docs) => {
         // success
         if (docs.exists) {
