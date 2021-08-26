@@ -1,5 +1,3 @@
-// マイページ
-
 <template>
     <div id="app">
         <center>

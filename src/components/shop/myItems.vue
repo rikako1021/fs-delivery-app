@@ -1,4 +1,3 @@
-<!--商品一覧画面-->
 <template>
   <div>
     <div　class='backHomeTop'>
