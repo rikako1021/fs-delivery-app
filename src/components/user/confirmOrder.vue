@@ -10,7 +10,6 @@
           <h1 v-if="cartItems === null">カートには何も入っていません</h1></center>
           <div v-for="item in cartItems" :key="item.itemID">
             <div>
-              <div class='name' v-if="cartItems">商品名：{{ item.name }}</div>
               <p v-if="cartItems"> <img v-bind:src = "item.image"/></p>
               <div class='price'>値段：{{ item.price }}</div>
               <div class='others'>
@@ -115,6 +114,7 @@ a {
   justify-content: center;
   align-items: center
 }
+
 
 .backHomeBottom{
 border-radius: 40px;
