@@ -4,23 +4,28 @@
     <div id="app">
         <center>
         <h1>商品一覧</h1></center>
-        <button @click="returnTop" type="button">ホーム</button><br>
-        <input type="text" placeholder="キーワード" v-model="keyword">
-        <button @click="filteredItems" type="button">商品検索</button>
+
+        <input class = "input" type="text" placeholder="キーワード" v-model="keyword">
+        <button class='button' @click="filteredItems" type="button">商品検索</button>
         <body>
           <div v-for="(item, index) in filteredItems" :key="index">
             <div>
-              <div class='name' v-if="itemsArray">商品名：{{ item.name }}</div>
+
               <p v-if="itemsArray"> <img v-bind:src = "item.image"/></p>
-              <div class='price'>値段：{{ item.price }}</div>
-              <div class='others'>出品数：{{ item.stock }}<br/>
-              ジャンル：{{ item.type }}<br>
-              フードロス[g]：{{ item.weight }}<br>
-              <button @click="stackItem(item)" type="button">+</button></div>
+              <div class='name' v-if="itemsArray">{{ item.name }}<br>
+              値段：￥{{ item.price }}
+              　商品数：{{ item.stocks }}個<br>
+              フードロス：{{ item.weight }}g<br>
+              </div>
+
+              <button class='button' @click="stackItem(item)" type="button">カートに追加する</button>
+
             </div>
           </div>
+
         </body>
-        <button @click="goCart">カート</button>
+        <button class='HomeBottom'　@click="goCart">カートを見る</button>
+        <button class='HomeBottom'　@click="returnTop" type="button">ホームに戻る</button><br>
     </div>
 </template>
 
@@ -119,3 +124,64 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+h1, h2 ,h3{
+  line-height: 55px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    background: $headerbg;
+    margin-top: 10px;
+}
+
+.input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 50%;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.button{
+font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 10%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.HomeBottom{
+border-radius: 40px;
+  padding: 50px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(18, 95, 63);
+  box-shadow: 0px 0px 5px 0px gray;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    background: $headerbg;
+    margin-bottom: 20px;
+}
+
+</style>
