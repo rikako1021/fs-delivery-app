@@ -1,31 +1,34 @@
 <template>
   <div>
-    <div　class='backHomeTop'>
-      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
-    </div>
-    <center>
-      <h1>出品一覧</h1></center>
     <body>
-      <div v-for="(item, index) in shopItemsArray" :key="index" >
-        <div>
-          <div class='name'><p v-if="shopItemsArray">商品名：{{ item.name }}</p></div>
-          <p v-if="shopItemsArray"> <img v-bind:src = "item.img"></img> </p>
-          <div class='price'>値段：{{ item.price }}</div>
-          <div clasee='others'>出品数：{{ item.stocks }}<br/>
-          ジャンル：{{ item.type }}</div>
-          <button @click="deleteItem">出品取り消し</button>
-        </div>
+
+    <form>
+          <h3>出品フォーム</h3>
+          <input class = "input" v-model="inputName" placeholder="商品名"><br/>
+          <input class = "input" v-model="inputPrice" placeholder="値段"><br/>
+          <input class = "input" v-model="inputStock" placeholder="個数"><br/>
+          <input class = "input" v-model="inputType" placeholder="ジャンル"><br/>
+          <input class = "input" v-model="inputWeight" placeholder="重量(g)"><br/>
+          <button class = "button"　type="submit" @click.prevent="newItem">出品</button>
+          <hr>
+    </form>
+
+      <center>
+      <h1>出品一覧</h1></center>
+
+      <div v-for="(item, index) in shopItemsArray" :key="index" class = 'sale'>
+          <div>
+            <p v-if="shopItemsArray"> <img v-bind:src = "item.img"></img> </p>
+            <div class='name'>
+            <p v-if="shopItemsArray">{{ item.name }}</p>
+            値段：￥{{ item.price }}　出品数：{{ item.stocks }}個
+            </div>
+            <button class = "button" @click="deleteItem">出品取り消し</button>
+          </div>
       </div>
+
       <HR></HR>
-      <form>
-        <h3>出品フォーム</h3>
-        <input v-model="inputName" placeholder="商品名"><br/>
-        <input v-model="inputPrice" placeholder="値段"><br/>
-        <input v-model="inputStock" placeholder="個数"><br/>
-        <input v-model="inputType" placeholder="ジャンル"><br/>
-        <input v-model="inputWeight" placeholder="重量(g)"><br/>
-        <button type="submit" @click.prevent="newItem">出品</button>
-      </form>
+
     </body>
     <div　class='backHomeBottom'>
       <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
@@ -109,3 +112,95 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h1, h2 ,h3{
+  line-height: 55px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    background: $headerbg;
+    margin-top: 10px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+.sale {
+  font-size:20px;
+  //float: left;
+  //width: 360px;
+}
+
+
+.signup {
+  margin-top: 20px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center
+}
+
+.backHomeBottom{
+border-radius: 40px;
+  padding: 50px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(18, 95, 63);
+  box-shadow: 0px 0px 5px 0px gray;
+}
+
+.input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 50%;
+  border: 0;
+  margin: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.button{
+font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 20%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    background: $headerbg;
+}
+
+hr{
+  border-top: 3px dashed;
+}
+
+
+</style>
