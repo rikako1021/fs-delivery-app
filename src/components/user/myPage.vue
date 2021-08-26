@@ -1,3 +1,5 @@
+// マイページ
+
 <template>
     <div id="app">
       <center>
@@ -57,9 +59,7 @@ export default {
     returnTop: function () {
       this.$router.push('/user/userTop')
     },
-    goItem: function () {
-      this.$router.push('/user/itemSearch')
-    }
   }
 }
 </script>
+

@@ -4,22 +4,29 @@
     <div id="app">
         <center>
         <h1>注文確認</h1></center>
+        <button @click="goBack" type="button">買い物を続ける</button><br>
         <body>
+          <center>
+          <h1 v-if="cartItems === null">カートには何も入っていません</h1></center>
           <div v-for="item in cartItems" :key="item.itemID">
             <div>
               <p v-if="cartItems"> <img v-bind:src = "item.image"/></p>
-                <div class='name' v-if="cartItems">
-                  {{ item.name }}<br>
-                  　値段：{{ item.price }}￥
-                  　フードロス：{{ item.weight }}g<br>
-                </div>
-              <div　class='sum'>合計金額：{{ cost }}￥</div>
+              <div class='price'>値段：{{ item.price }}</div>
+              <div class='others'>
+              ジャンル：{{ item.type }}<br>
+              フードロス[g]：{{ item.weight }}<br></div>
+              </div>
             </div>
-          </div>
+
+          <HR></HR>
+
         </body>
-        <button class = "button" @click="goFinish" type="button">注文確定</button><br>
-        <button class='backHomeBottom' @click="returnTop" type="button">ホームに戻る</button>
-        <button class='backHomeBottom' @click="goBack" type="button">買い物を続ける</button><br>
+        <center>
+        <h1 v-if="cartItems">合計金額：¥{{ cost }}<br>
+        <button v-if="cartItems" @click="goFinish" class="button">注文確定</button></h1></center>
+      <div　class='backHomeBottom'>
+        <router-link to="/user/userTop">ホームに戻る</router-link>
+      </div>
     </div>
 </template>
 
@@ -36,13 +43,15 @@ export default {
       cost: 0,
     }
   },
-  mounted() {
-    this.cartItems = JSON.parse(localStorage.getItem('obj'))
+  created() {
+    this.cartItems = JSON.parse(sessionStorage.getItem('obj'))
     console.log(this.cartItems)
-    this.cartItems.forEach((item) => {
-      console.log(item.price)
-      this.cost += Number(item.price)
-    })
+    if (this.cartItems != null) {
+      this.cartItems.forEach((item) => {
+        console.log(item.price)
+        this.cost += Number(item.price)
+      })
+    }
   },
   methods: {
     returnTop: function () {
@@ -52,7 +61,10 @@ export default {
       this.$router.push('/user/searchItems')
     },
     goFinish: function () {
-      localStorage.clear()
+      localStorage.setItem('obj', JSON.stringify(
+        this.cartItems
+      ))
+      sessionStorage.clear()
       this.$router.push('/user/finishOrder')
     },
   },
@@ -70,6 +82,39 @@ h1, h2 ,h3{
     background: $headerbg;
     margin-top: 10px;
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+.sale {
+  font-size:20px;
+  margin: auto;
+  padding: 100px;
+  padding-left: 30%;
+  padding-bottom: 0px;
+}
+
+.items{
+  margin-bottom: 10%;
+}
+
+
+.signup {
+  margin-top: 20px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center
+}
+
 
 .backHomeBottom{
 border-radius: 40px;
@@ -81,6 +126,18 @@ border-radius: 40px;
   border-style: solid;
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
+}
+
+.input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 50%;
+  border: 0;
+  margin: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .button{
@@ -105,15 +162,10 @@ font-family: "Roboto", sans-serif;
     font-family: "Open Sans", sans-serif;
     text-align: center;
     background: $headerbg;
-}
-
-.sum{
-font-size: 20px;
-    font-weight: bold;
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
-    background: $headerbg;
-    margin: 1% 0%;
+    margin: 0px auto;
+    margin-right: 30%;
+    padding-top:40px;
+    line-height: 200%;
 }
 
 hr{
