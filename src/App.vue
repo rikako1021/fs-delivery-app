@@ -23,7 +23,6 @@
     </div>
     <!-- </a> -->
     </router-link><router-view/> 
-
       
       <!-- <router-link to="/shop/shopsignout">Sign out</router-link> | -->
       <!--<router-link to="/shop/shopTop">shoppage</router-link> -->

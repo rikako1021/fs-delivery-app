@@ -29,7 +29,7 @@
 import firebase from 'firebase'
 
 export default {
-  name: 'searchHist',
+  name: 'itemSearch',
   data() {
     return {
       keyword: '',
