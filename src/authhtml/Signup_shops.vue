@@ -1,44 +1,41 @@
 <template>
   <div class="signup">
-    <h2>新規ユーザー登録</h2>
-    <input type="text" placeholder="Email" v-model="email">
+    <h2>Sign up (Shops)</h2>
+    <input type="text" placeholder="Username" v-model="username">
     <input type="password" placeholder="Password" v-model="password">
-    <button　@click="createUserAccount">登録</button>
-    <p>Do you have an account? 
-      <router-link to="/signin">sign in now!!</router-link>
+    <button>Register</button>
+    <p>Do you have an account?
+      <router-link to="/signin_shops">sign in now!!</router-link>
     </p>
   </div>
 </template>
 
 <script>
 import firebase from 'firebase'
-import 'bulma/css/bulma.css';
 
 export default {
-  name: 'signup',
+  name: 'SignupShops',
   data () {
     return {
-      email: '',
+      username: '',
       password: ''
     }
   },
   methods: {
-    createUserAccount() {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-          alert("Create Account");
+    signUp: function () {
+      firebase.auth().createUserWithEmailAndPassword(this.username, this.password)
+        .then(user => {
+          alert('Create account: ', user.email)
         })
         .catch(error => {
-          alert("Error!", error.message);
-          console.error("Account Regeister Error", error.message);
-        });
+          alert(error.message)
+        })
     }
   }
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;

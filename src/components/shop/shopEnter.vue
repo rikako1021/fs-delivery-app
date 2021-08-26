@@ -1,40 +1,35 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div class="user">
-      <h4 class="title">個人ユーザの方</h4>
-      <!-- <router-link to="/user/signin">サインイン</router-link>  -->
-      <Signin></Signin>
-      <br/><br/>
-      <h3>初めてご利用になる方は
-      <router-link to="/user/signup">こちら</router-link></h3>
+    <img src="../../assets/logo.png">
+    <div class="shop">
+      <h4 class="title">飲食店の方</h4><Signin></Signin>
+      <p>mottaiGOを導入する</p>
+      <router-link to="/shop/shopsignup">利用申請</router-link>
+    </div>
+      <!-- <router-view/> -->
       
+       
+      
+      <!-- <router-link to="/shop/shopsignout">Sign out</router-link> | -->
+      <!--<router-link to="/shop/shopTop">shoppage</router-link> -->
+
+    <div class="user">
+      <h4 class="title">個人ユーザの方はこちら</h4>
+      <!-- <router-link to="/user/signin">サインイン</router-link>  -->
     </div>
       <!-- <router-link to="/user/signout">Sign out</router-link> | -->
       <!-- <router-link to="/user/userTop">Mypage</router-link>  -->
       <br/>
 
-    <router-link to="/shop/shopEnter">
-    <a href="/shop/shopEnter">
-    <div class="shop">
-      <h4 class="title">
-        飲食店の方はこちら
-      </h4>
-    </div></a>
-    </router-link><router-view/> 
-
-      
-      <!-- <router-link to="/shop/shopsignout">Sign out</router-link> | -->
-      <!--<router-link to="/shop/shopTop">shoppage</router-link> -->
+    
     
   </div>
 </template>
 
 <script>
-import Signin from './components/user/signin.vue'
-
+import Signin from './shopsignin.vue'
 export default {
-  name: 'App',
+  name: 'shopenter',
   components: {
     Signin
   }

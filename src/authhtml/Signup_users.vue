@@ -1,11 +1,11 @@
 <template>
   <div class="signup">
-    <h2>新規店舗登録</h2>
-    <input type="text" placeholder="Email" v-model="email">
+    <h2>Sign up (Users)</h2>
+    <input type="text" placeholder="Username" v-model="username">
     <input type="password" placeholder="Password" v-model="password">
-    <button @click="createShopAccount">Register</button>
-    <p>Do you have an account? 
-      <router-link to="/signin">sign in now!!</router-link>
+    <button>Register</button>
+    <p>Do you have an account?
+      <router-link to="/signin_users">sign in now!!</router-link>
     </p>
   </div>
 </template>
@@ -14,30 +14,28 @@
 import firebase from 'firebase'
 
 export default {
-  name: 'shopsignup',
+  name: 'SignupUsers',
   data () {
     return {
-      email: '',
+      username: '',
       password: ''
     }
   },
   methods: {
-    createShopAccount() {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-          alert("Create Account");
+    signUp: function () {
+      firebase.auth().createUserWithEmailAndPassword(this.username, this.password)
+        .then(user => {
+          alert('Create account: ', user.email)
         })
         .catch(error => {
-          alert("Error!", error.message);
-          console.error("Account Regeister Error", error.message);
-        });
+          alert(error.message)
+        })
     }
   }
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
