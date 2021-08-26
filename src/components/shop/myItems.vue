@@ -30,6 +30,7 @@
     <div　class='backHomeBottom'>
       <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
     </div>
+  </div>
 </template>
 
 <script>
