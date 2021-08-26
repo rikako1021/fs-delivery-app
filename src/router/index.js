@@ -12,7 +12,7 @@ import myItems from '../components/shop/myItems.vue'
 import myOrders from '../components/shop/myOrders.vue'
 import myPage from '../components/user/myPage.vue'
 import orderHist from '../components/user/orderHist.vue'
-import itemSearch from '../components/user/itemSearch.vue'
+import searchItems from '../components/user/searchItems.vue'
 import shopEnter from '../components/shop/shopEnter.vue'
 
 
@@ -91,9 +91,9 @@ const routes = [
       name: 'orderHist',
       component: orderHist
     },{
-      path: '/user/itemSearch',
-      name: 'itemsearch',
-      component: itemSearch
+      path: '/user/searchItems',
+      name: 'searchItems',
+      component: searchItems
     },{
       path: '/shop/shopEnter',
       name: 'shopenter',

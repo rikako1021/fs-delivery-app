@@ -60,7 +60,7 @@ export default {
       location.reload();
     },
     toItemSearch(){
-      this.$router.push("/user/itemSearch");
+      this.$router.push("/user/searchItems");
       location.reload();
     },
     toOrderHist(){
@@ -153,7 +153,6 @@ button {
   width: 60%;
   border-radius: 40px;
   box-shadow: 0px 0px 8px 0px gray;
-  height: 200px;
   padding-top: 8%;
 }
 .other {
