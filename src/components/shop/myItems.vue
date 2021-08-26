@@ -9,7 +9,7 @@
       <div v-for="(item, index) in shopItemsArray" :key="index" >
         <div>
           <div class='name'><p v-if="shopItemsArray">商品名：{{ item.name }}</p></div>
-          <p v-if="shopItemsArray"> <img src = 'item.img' /> </p>
+          <p v-if="shopItemsArray"> <img src = 'https://firebasestorage.googleapis.com/v0/b/fs-delivery-app.appspot.com/o/%E5%94%90%E6%8F%9A%E3%81%92%E5%BC%81%E5%BD%93.jpg?alt=media&token=5da8fcae-1fb9-4551-89e8-12ae69eacc41' /> </p>
           <div class='price'>値段：{{ item.price }}</div>
           <div clasee='others'>出品数：{{ item.stocks }}<br/>
           ジャンル：{{ item.type }}</div>
@@ -31,6 +31,7 @@
       <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -42,7 +43,8 @@ export default {
       inputName: "",
       inputPrice:"",
       inputStock:"",
-      inputType:""
+      inputType:"",
+      inputWeight:"",
     }
   },
   created(){

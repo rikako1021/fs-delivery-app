@@ -1,6 +1,8 @@
 <template>
+  <div>
     <div　class='backHomeTop'>
       <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
     <center>
       <h1>注文一覧</h1></center>
     <body>
@@ -15,6 +17,8 @@
     </body>
     <div　class='backHomeBottom'>
       <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
+  </div>
 </template>
 <script>
 import firebase from 'firebase'

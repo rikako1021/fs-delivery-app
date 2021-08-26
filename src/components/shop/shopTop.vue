@@ -2,9 +2,9 @@
   <div class="signup">
     <h2>ここはログイン後の店舗トップ画面</h2>
 
-      <router-link to="/shop/myShop">店舗情報に行くみたいなボタン</router-link>
-      <router-link to="/shop/myItems">商品管理に行くみたいなボタン</router-link>
-      <router-link to="/shop/myOrders">注文管理に行くみたいなボタン</router-link>
+      <button @click="toMyShop">店舗情報の確認</button>
+      <button @click="toMyItems">商品の管理</button>
+      <button @click="toMyOrders">注文の確認</button>
 
   </div>
 </template>
@@ -18,7 +18,20 @@ export default {
       password: ''
     }
   },
-  methods: {}
+  methods: {
+    toMyShop(){
+      this.$router.push("/shop/myShop");
+      location.reload();
+    },
+    toMyItems(){
+      this.$router.push("/shop/myItems");
+      location.reload();
+    },
+    toMyOrders(){
+      this.$router.push("/shop/myOrders");
+      location.reload();
+    }
+  }
 }
 </script>
 
