@@ -24,8 +24,8 @@
           </div>
 
         </body>
-        <button class='HomeBottom'　@click="goCart">カートを見る</button>
-        <button class='HomeBottom'　@click="returnTop" type="button">ホームに戻る</button><br>
+        <button class='HomeBottom' @click="goCart">カートを見る</button>
+        <button class='HomeBo tom' @click="returnTop" type="button">ホームに戻る</button><br>
     </div>
 </template>
 
@@ -75,12 +75,12 @@ export default {
       this.$router.push('/user/userTop')
     },
     goCart: function () {
-      this.$router.push('/user/searchItems/confirmOrder')
+      this.$router.push('/user/confirmOrder')
     },
     stackItem: function (item) {
       this.cartItems.push(
         {
-          name: item.description,
+          name: item.name,
           image: item.image,
           itemid: item.itemid,
           price: item.price,
@@ -90,7 +90,7 @@ export default {
           weight: item.weight
         }
       )
-      localStorage.setItem('obj', JSON.stringify(
+      sessionStorage.setItem('obj', JSON.stringify(
         this.cartItems
       ))
       console.log(localStorage)

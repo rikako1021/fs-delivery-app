@@ -87,7 +87,6 @@ a {
 }
 .signup {
   margin-top: 0px;
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -119,7 +118,6 @@ button {
   font-family: "Hiragino Maru Gothic ProN W4";
   margin-top: 100px;
 }
-
 .signout {
   background-color: rgb(71, 168, 155);
   padding:20px;

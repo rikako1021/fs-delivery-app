@@ -2,10 +2,11 @@
   <div id="app">
     <img src="../../assets/logo.png">
     <div class="shop">
-      <h4 class="title">飲食店の方</h4><Signin></Signin><p>mottaiGOを導入する</p>
+      <h4 class="title">飲食店の方</h4><Signin></Signin>
+      <p>mottaiGOを導入する</p>
       <router-link to="/shop/shopsignup">利用申請</router-link>
     </div>
-      <router-view/>
+      <!-- <router-view/> -->
       
        
       

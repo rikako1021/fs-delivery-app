@@ -28,6 +28,8 @@
 <script>
 import firebase from 'firebase'
 
+var db = firebase.firestore()
+
 export default {
   name: 'searchHist',
   data() {
@@ -39,7 +41,6 @@ export default {
     }
   },
   created() {
-    const db = firebase.firestore()
     /* 全てのドキュメントを配列に代入 */
     db.collection("items").get().then((docs) => {
         // success

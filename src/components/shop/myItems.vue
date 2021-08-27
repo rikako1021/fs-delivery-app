@@ -3,7 +3,7 @@
     <body>
 
     <form>
-          <h3>出品フォーム</h3>
+          <h3>新規商品追加フォーム</h3>
           <input class = "input" v-model="inputName" placeholder="商品名"><br/>
           <input class = "input" v-model="inputPrice" placeholder="値段"><br/>
           <input class = "input" v-model="inputStock" placeholder="個数"><br/>
@@ -144,21 +144,16 @@ a {
   padding-left: 30%;
   padding-bottom: 0px;
 }
-
 .items{
   margin-bottom: 10%;
 }
-
-
 .signup {
   margin-top: 20px;
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center
 }
-
 .backHomeBottom{
 border-radius: 40px;
   padding: 50px;
@@ -170,7 +165,6 @@ border-radius: 40px;
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
 }
-
 .input{
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -182,7 +176,6 @@ border-radius: 40px;
   box-sizing: border-box;
   font-size: 14px;
 }
-
 .button{
 font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -198,7 +191,6 @@ font-family: "Roboto", sans-serif;
   cursor: pointer;
   margin-bottom: 20px;
 }
-
 .name{
     font-size: 20px;
     font-weight: bold;
@@ -210,14 +202,10 @@ font-family: "Roboto", sans-serif;
     padding-top:40px;
     line-height: 200%;
 }
-
 hr{
   border-top: 3px dashed;
 }
-
 .float_l {
 	float: left;
 }
-
-
 </style>

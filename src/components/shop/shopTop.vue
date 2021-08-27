@@ -1,11 +1,9 @@
 <template>
   <!-- <div class="signup">
     <h2>ここはログイン後の店舗トップ画面</h2>
-
       <button @click="toMyShop">店舗情報の確認</button>
       <button @click="toMyItems">商品の管理</button>
       <button @click="toMyOrders">注文の確認</button>
-
   </div> -->
   <div id="shopTop">
   <div class="signup">
@@ -89,7 +87,6 @@ a {
 }
 .signup {
   margin-top: 0px;
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -121,7 +118,6 @@ button {
   font-family: "Hiragino Maru Gothic ProN W4";
   margin-top: 100px;
 }
-
 .signout {
   background-color: rgb(71, 168, 155);
   padding:20px;
