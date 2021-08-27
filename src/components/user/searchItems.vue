@@ -65,6 +65,7 @@ export default {
             stocks: item.stocks,
             type: item.type,
             weight: item.weight,
+            date: '',
           },
         ]
       })
@@ -79,16 +80,7 @@ export default {
     },
     stackItem: function (item) {
       this.cartItems.push(
-        {
-          name: item.name,
-          image: item.image,
-          itemid: item.itemid,
-          price: item.price,
-          shopid: item.shopid,
-          stocks: item.stocks,
-          type: item.type,
-          weight: item.weight
-        }
+        item
       )
       sessionStorage.setItem('obj', JSON.stringify(
         this.cartItems

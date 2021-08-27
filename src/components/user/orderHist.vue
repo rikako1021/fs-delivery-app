@@ -43,6 +43,7 @@ export default {
     return {
       histitemsArray: [],
       cartArray: [],
+      date: '',
     }
   },
   mounted() {
