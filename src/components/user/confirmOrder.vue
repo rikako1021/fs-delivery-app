@@ -20,6 +20,27 @@
 
           <HR></HR>
 
+        <p class="cart-attribute__field">
+          <label>配送時間を選択：</label>
+          <select id="" name="attributes[配送時間指定]">
+            <option value="08:00-09:00">08:00-09:00</option>
+            <option value="09:00-10:00">09:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+            <option value="15:00-16:00">15:00-16:00</option>
+            <option value="16:00-17:00">16:00-17:00</option>
+            <option value="17:00-18:00">17:00-18:00</option>
+            <option value="18:00-19:00">18:00-19:00</option>
+            <option value="19:00-20:00">19:00-20:00</option>
+            <option value="20:00-21:00">20:00-21:00</option>
+            <option value="21:00-22:00">21:00-22:00</option>
+            <option value="22:00-23:00">22:00-23:00</option>
+          </select>
+        </p>
+
         </body>
         <center>
         <h1 v-if="cartItems">合計金額：¥{{ cost }}<br>
@@ -61,6 +82,9 @@ export default {
       this.$router.push('/user/searchItems')
     },
     goFinish: function () {
+      var dateControl = document.querySelector('input[type="datetime-local"]')
+      console.log(dateControl.name)
+      this.cartItems[0]['date'] = dateControl.name
       localStorage.setItem('obj', JSON.stringify(
         this.cartItems
       ))
