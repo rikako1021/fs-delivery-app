@@ -19,10 +19,9 @@
               値段：￥{{ item.price }}
               　商品数：{{ item.stocks }}個<br>
               フードロス：{{ item.weight }}g<br>
-              </div>
-
-              <button class='button' @click="stackItem(item)" type="button">カートに追加する</button>
-
+              
+              <button class='button' @click="stackItem(item)" type="button">カートに追加</button>
+            </div>
             </div>
           </div>
 
@@ -140,6 +139,7 @@ h1, h2 ,h3{
     text-align: center;
     background: $headerbg;
     margin-top: 10px;
+    font-family: "Hiragino Maru Gothic ProN W4";
 }
 
 .input{
@@ -153,7 +153,7 @@ h1, h2 ,h3{
 }
 
 .button{
-font-family: "Roboto", sans-serif;
+  font-family: "Hiragino Maru Gothic ProN W4";
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
@@ -161,26 +161,28 @@ font-family: "Roboto", sans-serif;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 16px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
   margin-bottom: 20px;
 }
 .searchbutton{
-font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #285e2a;
   width: 9%;
   border: 0;
-  padding: 15px;
+  padding: 9px;
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
   margin-bottom: 20px;
+  font-size: 120%;
+  font-family: "Hiragino Maru Gothic ProN W4";
+  border-radius: 10px;
 }
 .HomeBottom{
 border-radius: 40px;
@@ -200,10 +202,10 @@ border-radius: 40px;
 .name{
     font-size: 20px;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Hiragino Maru Gothic ProN W4";
     text-align: center;
     background: $headerbg;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 #app {
   font-family: "Hiragino Maru Gothic ProN W4";
