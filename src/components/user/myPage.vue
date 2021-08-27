@@ -1,15 +1,17 @@
 <template>
     <div id="app">
       <center>
-        <h1>ユーザー情報</h1></center>
+        <h1>ユーザー登録情報</h1></center>
+        <br/>
       <body>
         <div v-for="(item, index) in usersArray" :key="index">
-          <div class='shopName'  id="container1"><span id="itemA">名前</span><span id="itemB">{{ item.name }}</span></div>
-          <div class='others' id="container2">
-          <span id="itemC">ユーザーID</span><span id="itemD">{{ item.userID }}</span>
-          <span id="itemE">住所</span><span id="itemF">{{ item.prefecture }}都{{ item.city }}{{ item.address }}</span>
-          <span id="itemG">メールアドレス</span><span id="itemH">{{ item.mail }}</span>
-          <span id="itemI">フードロス[g]</span><span id="itemJ">{{ item.totalWeight }}</span>
+          <div class='shopName'>名前：{{ item.name }}</div>
+          <br/>
+          <div class='others'>
+          ユーザーID：{{ item.userID }}<br/>
+          住所：{{ item.prefecture }}都{{ item.city }}{{ item.address }}<br/>
+          メールアドレス：{{ item.mail }}<br/>
+        防いだフードロス：{{ item.totalWeight }}g
           </div>
         </div>
       </body>
@@ -116,12 +118,14 @@ button h2 {
   font-weight: bold;
 }
 .shopName {
-  font-size: 300%;
+  font-size: 200%;
   font-weight: normal;
+  font-family: "Hiragino Maru Gothic ProN W4";
 }
 .others {
-  font-size: 300%;
+  font-size: 200%;
   font-weight: normal;
+  font-family: "Hiragino Maru Gothic ProN W4";
 }
 .backHome {
   padding: 25px;
@@ -129,88 +133,13 @@ button h2 {
   font-size: 160%;
   border-radius: 40px;
   padding: 50px;
-  margin: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-style: solid;
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
+  font-family: "Hiragino Maru Gothic ProN W4";
 }
-#container1 {
-  display: grid;
-  grid-template-rows: 80px;
-  grid-template-columns: 300px 400px 1fr 300px;
-}
-#itemA {
-  grid-row: 1;
-  grid-column: 2;
-  border-top: 3px solid;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemB {
-  grid-row: 1;
-  grid-column: 3;
-  border-top: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#container2 {
-  display: grid;
-  grid-template-rows: 80px 80px 80px 80px 100px;
-  grid-template-columns: 300px 400px 1fr 300px;
-}
-#itemC {
-  grid-row: 1;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemD {
-  grid-row: 1;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemE {
-  grid-row: 2;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemF {
-  grid-row: 2;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemG {
-  grid-row: 3;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-bottom: 3px solid;
-  border-right: 3px solid;
-}
-#itemH {
-  grid-row: 3;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemI {
-  grid-row: 4;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-bottom: 3px solid;
-  border-right: 3px solid;
-}
-#itemJ {
-  grid-row: 4;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
+
 </style>
