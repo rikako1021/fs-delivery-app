@@ -1,4 +1,3 @@
-<!--test-->
 <template>
   <div>
     <center>
@@ -189,4 +188,8 @@ button h2 {
   border-right: 3px solid;
   border-bottom: 3px solid;
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498

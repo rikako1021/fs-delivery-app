@@ -88,7 +88,10 @@ a {
 }
 .signup {
   margin-top: 0px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -120,7 +123,10 @@ button {
   font-family: "Hiragino Maru Gothic ProN W4";
   margin-top: 100px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .signout {
   background-color: rgb(71, 168, 155);
   padding:20px;
@@ -168,4 +174,8 @@ h3 {
   font-size: 120%;
   line-height: 150%;
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498

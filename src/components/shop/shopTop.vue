@@ -1,7 +1,44 @@
 <template>
   <!-- <div class="signup">
     <h2>ここはログイン後の店舗トップ画面</h2>
+      <button @click="toMyShop">店舗情報の確認</button>
+      <button @click="toMyItems">商品の管理</button>
+      <button @click="toMyOrders">注文の確認</button>
+  </div> -->
+  <div id="shopTop">
+  <div class="signup">
+    <h1>こんにちは  rikako240@gmail.com <!--{{ name }}-->さん</h1>
+    <br/>
+    <h3>あなたがしたいことを選んでください！<!--{{ msg }}--></h3>
+    <div class="toMyItems">
+    <button @click="toMyItems">
+      <img src="../../assets/icon1.png"><br/>
+        <h2>商品の管理</h2>
+    </button>
+    </div>
+    <div class="other">
+    <div class="toMyShop">
+    <button @click="toMyShop">
+      <img src="../../assets/icon2.png"><br/>
+      店舗情報の確認
+    </button>
+    </div>
+    <div class="toMyOrders">
+    <button @click="toMyOrders">
+      <img src="../../assets/icon3.png"><br/>
+      注文の確認
+    </button>
+    </div>
+    </div>
+    <div class="other">
+    <div class="signout">
+    <button @click="signOut">
+      ログアウト
+    </button>
+    </div>
+    <div class="none">
 
+<<<<<<< HEAD
       <button @click="toMyShop">店舗情報の確認</button>
       <button @click="toMyItems">商品の管理</button>
       <button @click="toMyOrders">注文の確認</button>
@@ -40,6 +77,8 @@
     </div>
     <div class="none">
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
     </div>
     </div>
     </div>
@@ -89,7 +128,10 @@ a {
 }
 .signup {
   margin-top: 0px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -121,7 +163,10 @@ button {
   font-family: "Hiragino Maru Gothic ProN W4";
   margin-top: 100px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .signout {
   background-color: rgb(71, 168, 155);
   padding:20px;
@@ -169,4 +214,8 @@ h3 {
   font-size: 120%;
   line-height: 150%;
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498

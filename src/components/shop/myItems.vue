@@ -3,13 +3,21 @@
     <body>
 
     <form>
+<<<<<<< HEAD
           <h3>出品フォーム</h3>
+=======
+          <h3>新規商品追加フォーム</h3>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
           <input class = "input" v-model="inputName" placeholder="商品名"><br/>
           <input class = "input" v-model="inputPrice" placeholder="値段"><br/>
           <input class = "input" v-model="inputStock" placeholder="個数"><br/>
           <input class = "input" v-model="inputType" placeholder="ジャンル"><br/>
           <input class = "input" v-model="inputWeight" placeholder="重量(g)"><br/>
+<<<<<<< HEAD
           <button class = "button" type="submit" @click.prevent="newItem">出品</button>
+=======
+          <button class = "button"　type="submit" @click.prevent="newItem">出品</button>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
           <hr>
     </form>
       <div class = "items">
@@ -19,7 +27,11 @@
         <div v-for="(item, index) in shopItemsArray" :key="index" class = 'sale'>
             <div>
                 <p v-if="shopItemsArray"></p>
+<<<<<<< HEAD
                 <img v-bind:src = "item.img" class="float_l"></img>
+=======
+                <img v-bind:src = "item.img"class="float_l"></img>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
                 <div class='name'>
                   <p v-if="shopItemsArray">{{ item.name }}</p>
                   値段：￥{{ item.price }}　出品数：{{ item.stocks }}個<br/>
@@ -144,6 +156,7 @@ a {
   padding-left: 30%;
   padding-bottom: 0px;
 }
+<<<<<<< HEAD
 
 .items{
   margin-bottom: 10%;
@@ -153,12 +166,22 @@ a {
 .signup {
   margin-top: 20px;
 
+=======
+.items{
+  margin-bottom: 10%;
+}
+.signup {
+  margin-top: 20px;
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .backHomeBottom{
 border-radius: 40px;
   padding: 50px;
@@ -170,7 +193,10 @@ border-radius: 40px;
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .input{
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -182,7 +208,10 @@ border-radius: 40px;
   box-sizing: border-box;
   font-size: 14px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .button{
 font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -198,7 +227,10 @@ font-family: "Roboto", sans-serif;
   cursor: pointer;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .name{
     font-size: 20px;
     font-weight: bold;
@@ -210,6 +242,7 @@ font-family: "Roboto", sans-serif;
     padding-top:40px;
     line-height: 200%;
 }
+<<<<<<< HEAD
 
 hr{
   border-top: 3px dashed;
@@ -220,4 +253,12 @@ hr{
 }
 
 
+=======
+hr{
+  border-top: 3px dashed;
+}
+.float_l {
+	float: left;
+}
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 </style>

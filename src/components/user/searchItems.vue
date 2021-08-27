@@ -3,10 +3,13 @@
 <template>
     <div id="app">
         <center>
+          <br/>
         <h1>商品一覧</h1></center>
-
+  <br/>
         <input class = "input" type="text" placeholder="キーワード" v-model="keyword">
-        <button class='button' @click="filteredItems" type="button">商品検索</button>
+        <button class='searchbutton' @click="filteredItems" type="button">検索</button>
+        <br/>
+        <br/>
         <body>
           <div v-for="(item, index) in filteredItems" :key="index">
             <div>
@@ -16,16 +19,16 @@
               値段：￥{{ item.price }}
               　商品数：{{ item.stocks }}個<br>
               フードロス：{{ item.weight }}g<br>
-              </div>
-
-              <button class='button' @click="stackItem(item)" type="button">カートに追加する</button>
-
+              
+              <button class='button' @click="stackItem(item)" type="button">カートに追加</button>
+            </div>
             </div>
           </div>
 
         </body>
+        <button class='HomeBottom' @click="returnTop" type="button">ホームに戻る</button>
         <button class='HomeBottom' @click="goCart">カートを見る</button>
-        <button class='HomeBo tom' @click="returnTop" type="button">ホームに戻る</button><br>
+        <br>
     </div>
 </template>
 
@@ -128,6 +131,7 @@ h1, h2 ,h3{
     text-align: center;
     background: $headerbg;
     margin-top: 10px;
+    font-family: "Hiragino Maru Gothic ProN W4";
 }
 
 .input{
@@ -137,43 +141,65 @@ h1, h2 ,h3{
   width: 50%;
   border: 0;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 120%;
 }
 
 .button{
-font-family: "Roboto", sans-serif;
+  font-family: "Hiragino Maru Gothic ProN W4";
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
-  width: 10%;
+  width: 30%;
   border: 0;
   padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.searchbutton{
+  text-transform: uppercase;
+  outline: 0;
+  background: #285e2a;
+  width: 9%;
+  border: 0;
+  padding: 9px;
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
   margin-bottom: 20px;
+  font-size: 120%;
+  font-family: "Hiragino Maru Gothic ProN W4";
+  border-radius: 10px;
 }
-
 .HomeBottom{
 border-radius: 40px;
   padding: 50px;
   margin: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-top: 10%;
+  margin-bottom: 10%;
   border-style: solid;
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
+  font-size: 140%;
+  font-family: "Hiragino Maru Gothic ProN W4";
 }
 
 .name{
     font-size: 20px;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Hiragino Maru Gothic ProN W4";
     text-align: center;
     background: $headerbg;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-
+#app {
+  font-family: "Hiragino Maru Gothic ProN W4";
+}
 </style>

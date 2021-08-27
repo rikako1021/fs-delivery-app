@@ -1,5 +1,3 @@
-// 注文完了ページ
-
 <template>
     <div id="app">
         <center>
@@ -11,7 +9,6 @@
 <script>
 /* eslint-disable no-console */
 import firebase from 'firebase'
-
 export default {
   name: 'finishOrder',
   data() {
@@ -39,7 +36,10 @@ h1, h2 ,h3{
     background: $headerbg;
     margin-top: 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
 .button{
 font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -55,5 +55,9 @@ font-family: "Roboto", sans-serif;
   cursor: pointer;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
 
 </style>
+=======
+</style>
+>>>>>>> d45971ad845475fd90157f79c4a82d90e172a498
