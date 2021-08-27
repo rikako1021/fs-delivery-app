@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import firebase from 'firebase'
+import topTop from './components/topTop.vue'
 
 const config = {
   apiKey: "AIzaSyDvm_RsTfDS2ek2h-uYZ8n9ShbsyUImPSo",

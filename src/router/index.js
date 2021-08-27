@@ -16,6 +16,7 @@ import searchItems from '../components/user/searchItems.vue'
 import shopEnter from '../components/shop/shopEnter.vue'
 import confirmOrder from '../components/user/confirmOrder.vue'
 import finishOrder from '../components/user/finishOrder.vue'
+import topTop from '../components/topTop.vue'
 
 
 import firebase from 'firebase'
@@ -38,6 +39,11 @@ const routes = [
       name: 'usertop',
       component: userTop,
       meta: { requireAuth: true }
+    },
+    {
+      path: '/topTop',
+      name: 'topTop',
+      component: topTop
     },
     {
       path: '/user/signup',

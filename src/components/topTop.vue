@@ -1,13 +1,31 @@
 <template>
   <div id="app">
-    <router-link to="/topTop"><img src="./assets/logo.png"></router-link>
-    </router-link><router-view/>
+    <div class="user">
+      <h4 class="title">個人ユーザの方</h4>
+      <!-- <router-link to="/user/signin">サインイン</router-link>  -->
+      <Signin></Signin>
+      <br/><br/>
+      <h3>初めてご利用になる方は
+      <router-link to="/user/signup">こちら</router-link></h3>
 
-  </div>
+    </div>
+      <!-- <router-link to="/user/signout">Sign out</router-link> | -->
+      <!-- <router-link to="/user/userTop">Mypage</router-link>  -->
+    <br/>
+
+    <router-link to="/shop/shopEnter">
+    <a href="/shop/shopEnter">
+    <div class="shop">
+      <h4 class="title">
+        飲食店の方はこちら
+      </h4>
+    </div></a>
+  </router-link><router-view/>
+</div>
 </template>
 
 <script>
-import Signin from './components/user/signin.vue'
+import Signin from  './user/signin.vue'
 export default {
   name: 'App',
   components: {

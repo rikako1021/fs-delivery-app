@@ -49,7 +49,7 @@ export default {
   data () {
     return {
       msg: 'お腹が空いたら料理を注文して、フードロス削減に貢献しませんか？',
-      name: firebase.auth().currentUser.email
+      name: firebase.auth().currentUser.email,
     }
   },
   methods: {
