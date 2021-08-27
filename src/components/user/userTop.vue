@@ -4,6 +4,7 @@
     <h1>こんにちは  rikako240@gmail.com <!--{{ name }}-->さん</h1>
     <br/>
     <h3>お腹が空いたら料理を注文して、フードロス削減に貢献しませんか？<!--{{ msg }}--></h3>
+<<<<<<< HEAD
       <div class="toItemSearch">
       <button @click="toItemSearch">
         <img src="../../assets/icon1.png"><br/>
@@ -17,6 +18,40 @@
         マイページ
       </button>
       </div>
+=======
+    <div class="toItemSearch">
+    <button @click="toItemSearch">
+      <img src="../../assets/icon1.png"><br/>
+        <h2>商品検索</h2>
+    </button>
+    </div>
+    <div class="other">
+    <div class="toMyPage">
+    <button @click="toMyPage">
+      <img src="../../assets/icon2.png"><br/>
+      マイページ
+    </button>
+    </div>
+
+    <div class="toOrderHist">
+    <button @click="toOrderHist">
+      <img src="../../assets/icon3.png"><br/>
+      注文履歴
+    </button>
+    </div>
+    </div>
+
+    <div class="other">
+    <div class="signout">
+    <button @click="signOut">
+      ログアウト
+    </button>
+    </div>
+
+    <div class="none">
+          救ったフードロスは600gです
+        </div>
+>>>>>>> d5c55188ee51366f5a8ae84d5ef0628500665833
 
       <div class="toOrderHist">
       <button @click="toOrderHist">
@@ -25,6 +60,7 @@
       </button>
       </div>
     </div>
+<<<<<<< HEAD
 
       <div class="other">
         <div class="signout">
@@ -40,6 +76,10 @@
       </div>
   </div>
   </div>
+=======
+    </div>
+    </div>
+>>>>>>> d5c55188ee51366f5a8ae84d5ef0628500665833
 </template>
 
 <script>
