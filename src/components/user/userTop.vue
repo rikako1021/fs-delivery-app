@@ -17,6 +17,7 @@
       マイページ
     </button>
     </div>
+
     <div class="toOrderHist">
     <button @click="toOrderHist">
       <img src="../../assets/icon3.png"><br/>
@@ -24,18 +25,21 @@
     </button>
     </div>
     </div>
+
     <div class="other">
     <div class="signout">
     <button @click="signOut">
       ログアウト
     </button>
     </div>
+
     <div class="none">
+          救ったフードロスは600gです
+        </div>
 
     </div>
     </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -127,12 +131,17 @@ button {
   box-shadow: 0px 0px 8px 0px gray;
 }
 .none {
-  background-color: rgb(182, 182, 182);
-  padding:20px;
+  background-color: rgb(204, 204, 204);
+  padding:30px;
   margin: 25px;
   width: 60%;
   border-radius: 30px;
   box-shadow: 0px 0px 8px 0px gray;
+  border: none;
+  font-family: "Hiragino Maru Gothic ProN W4";
+  font-size: 160%;
+  color: aliceblue;
+  font-weight: bold;
 }
 .toMyPage {
   background-color: rgb(50, 114, 105);
