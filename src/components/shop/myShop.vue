@@ -4,11 +4,11 @@
       <h1>店舗情報</h1></center>
     <body>
       <div v-for="(item, index) in shopsArray" :key="index">
-        <div class='shopName'  id="container1"><span id="itemA">店の名前</span><span id="itemB">{{ item.name }}</span></div>
+        <div class='shopName'  id="container1"><span id="itemA">店の名前：</span><span id="itemB">{{ item.name }}</span></div>
         <div class='others' id="container2">
-        <span id="itemC">店のID</span><span id="itemD">{{ item.shopID }}</span>
-        <span id="itemE">住所</span><span id="itemF">{{ item.shopAddress }}</span>
-        <span id="itemG">電話番号</span><span id="itemH">{{ item.phoneNo }}</span>
+        <span id="itemC">店のID：</span><span id="itemD">{{ item.shopID }}</span><br/>
+        <span id="itemE">住所：</span><span id="itemF">{{ item.shopAddress }}</span><br/>
+        <span id="itemG">電話番号：</span><span id="itemH">{{ item.phoneNo }}</span>
         </div>
       </div>
     </body>
@@ -124,68 +124,5 @@ button h2 {
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
 }
-#container1 {
-  display: grid;
-  grid-template-rows: 80px;
-  grid-template-columns: 300px 300px 1fr 300px;
-}
-#itemA {
-  grid-row: 1;
-  grid-column: 2;
-  border-top: 3px solid;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemB {
-  grid-row: 1;
-  grid-column: 3;
-  border-top: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#container2 {
-  display: grid;
-  grid-template-rows: 80px 80px 80px 100px;
-  grid-template-columns: 300px 300px 1fr 300px;
-}
-#itemC {
-  grid-row: 1;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemD {
-  grid-row: 1;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemE {
-  grid-row: 2;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemF {
-  grid-row: 2;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
-#itemG {
-  grid-row: 3;
-  grid-column: 2;
-  border-left: 3px solid;
-  border-bottom: 3px solid;
-  border-right: 3px solid;
-}
-#itemH {
-  grid-row: 3;
-  grid-column: 3;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-}
+
 </style>
