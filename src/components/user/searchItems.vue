@@ -3,10 +3,13 @@
 <template>
     <div id="app">
         <center>
+          <br/>
         <h1>商品一覧</h1></center>
-
+  <br/>
         <input class = "input" type="text" placeholder="キーワード" v-model="keyword">
-        <button class='button' @click="filteredItems" type="button">商品検索</button>
+        <button class='searchbutton' @click="filteredItems" type="button">検索</button>
+        <br/>
+        <br/>
         <body>
           <div v-for="(item, index) in filteredItems" :key="index">
             <div>
@@ -24,8 +27,9 @@
           </div>
 
         </body>
+        <button class='HomeBottom' @click="returnTop" type="button">ホームに戻る</button>
         <button class='HomeBottom' @click="goCart">カートを見る</button>
-        <button class='HomeBo tom' @click="returnTop" type="button">ホームに戻る</button><br>
+        <br>
     </div>
 </template>
 
@@ -145,7 +149,7 @@ h1, h2 ,h3{
   width: 50%;
   border: 0;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 120%;
 }
 
 .button{
@@ -153,7 +157,7 @@ font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
-  width: 10%;
+  width: 30%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -163,16 +167,34 @@ font-family: "Roboto", sans-serif;
   cursor: pointer;
   margin-bottom: 20px;
 }
-
+.searchbutton{
+font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 9%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
 .HomeBottom{
 border-radius: 40px;
   padding: 50px;
   margin: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-top: 10%;
+  margin-bottom: 10%;
   border-style: solid;
   border-color: rgb(18, 95, 63);
   box-shadow: 0px 0px 5px 0px gray;
+  font-size: 140%;
+  font-family: "Hiragino Maru Gothic ProN W4";
 }
 
 .name{
@@ -183,5 +205,7 @@ border-radius: 40px;
     background: $headerbg;
     margin-bottom: 20px;
 }
-
+#app {
+  font-family: "Hiragino Maru Gothic ProN W4";
+}
 </style>
