@@ -1,5 +1,3 @@
-// マイページ
-
 <template>
     <div id="app">
       <center>
@@ -21,7 +19,6 @@
 
 <script>
 import firebase from 'firebase'
-
 export default {
   name: 'myPage',
   data() {
@@ -59,7 +56,9 @@ export default {
     returnTop: function () {
       this.$router.push('/user/userTop')
     },
+    goItem: function () {
+      this.$router.push('/user/itemSearch')
+    }
   }
 }
 </script>
-

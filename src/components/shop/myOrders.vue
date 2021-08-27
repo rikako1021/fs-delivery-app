@@ -1,18 +1,23 @@
 <template>
   <div>
+    <div　class='backHomeTop'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
     <center>
       <h1>注文一覧</h1></center>
     <body>
-      <div v-for="(item, index) in orderItemsArray" :key="index">
+      <div v-for="item in orderItemsArray" :key="item">
         <div>
-          <div class='name' v-if="shopItemsArray">商品名：{{ item.name }}</div>
-          <p v-if="shopItemsArray"> <img src = 'item.img' /> </p>
-          <div class='price'>値段：{{ item.price }}</div>
-          <div clasee='others'>出品数：{{ item.stock }}<br/>
-          ジャンル：{{ item.type }}</div>
+          <div class='name' v-if="orderItemsArray" id="container1"><span id="itemA">商品名</span><span id="itemB">{{ item.name }}</span></div>
+          <div class='price' id="container2"><span id="itemC">時間</span><span id="itemD">{{ item.time }}</span></div>
+          <div class='others' id="container3"><span id="itemE">注文数</span><span id="itemF">{{ item.quantity }}</span>
+          <span id="itemG">注文した人</span><span id="itemH">{{ item.user }}</span></div>
         </div>
       </div>
     </body>
+    <div　class='backHomeBottom'>
+      <router-link to="/shop/shopTop">店舗ホームに戻る</router-link>
+    </div>
   </div>
 </template>
 
@@ -21,27 +26,26 @@ import firebase from 'firebase'
 export default {
   data() {
     return {
-      shopItemsArray: [],
+      orderItemsArray: [],
     }
   },
   created(){
     const that = this
-    const shopItems = firebase
+    const orderItems = firebase
       .firestore()
       .collection('orders')
       .where('shopID','==','s00001')
-    shopItems.get().then((snapshot) => {
+    orderItems.get().then((snapshot) => {
       snapshot.forEach((doc) => {
-        const shopItems = doc.data()
-        that.shopItemsArray = [
-          ...that.shopItemsArray,
+        const orderItems = doc.data()
+        that.orderItemsArray = [
+          ...that.orderItemsArray,
           {
-            name: shopItems.description,
-            type: shopItems.type,
-            itemID: shopItems.itemID,
-            stocks: shopItems.stocks,
-            price: shopItems.price,
-            img: shopItems.image,
+            name: orderItems.description,
+            time: orderItems.time,
+            itemID: orderItems.itemID,
+            quantity: orderItems.quantity,
+            user: orderItems.userID,
           },
         ]
       })
@@ -49,3 +53,165 @@ export default {
   }
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-size: 400%;
+  font-weight: bold;
+  color: #42b983;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 130%;
+  font-size: 145%;
+  box-shadow: 0px 0px 5px rgb(56, 56, 56) inset;
+  border: none;
+  border-radius: 6px;
+}
+td {
+    padding: 30px;
+    border-bottom: 1px solid #EEE;
+    padding-right: 80px;
+    border: none;
+}
+tr {
+  margin-right: 10px;
+  text-align: center;
+}
+input {
+  margin: 10px 0;
+  padding: 10px;
+}
+button {
+  font-size: 120%;
+  padding: 30px;
+  margin-left: 50;
+  box-shadow: 1px 1px 5px 3px rgb(173, 173, 173);
+  border: none;
+  width: 50%;
+}
+button h2 {
+  font-family: "Hiragino Maru Gothic ProN W4";
+  font-weight: bold;
+}
+.name {
+  font-size: 300%;
+  font-weight: normal;
+}
+.price {
+  font-size: 300%;
+  font-weight: normal;
+}
+.others {
+  font-size: 300%;
+  font-weight: normal;
+}
+.backHomeTop {
+  padding: 25px;
+  color: rgb(0, 0, 0);
+  font-size: 160%;
+  border-radius: 40px;
+  padding: 50px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(18, 95, 63);
+  box-shadow: 0px 0px 5px 0px gray;
+}
+.backHomeBottom {
+  padding: 25px;
+  color: rgb(0, 0, 0);
+  font-size: 160%;
+  border-radius: 40px;
+  padding: 50px;
+  margin: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(18, 95, 63);
+  box-shadow: 0px 0px 5px 0px gray;
+}
+#container1 {
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: 300px 300px 1fr 300px;
+}
+#itemA {
+  grid-row: 1;
+  grid-column: 2;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemB {
+  grid-row: 1;
+  grid-column: 3;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#container2 {
+  display: grid;
+  grid-template-rows: 80px;
+  grid-template-columns: 300px 300px 1fr 300px;
+}
+#itemC {
+  grid-row: 1;
+  grid-column: 2;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemD {
+  grid-row: 1;
+  grid-column: 3;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#container3 {
+  display: grid;
+  grid-template-rows: 80px 80px 100px;
+  grid-template-columns: 300px 300px 1fr 300px;
+}
+#itemE {
+  grid-row: 1;
+  grid-column: 2;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemF {
+  grid-row: 1;
+  grid-column: 3;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+#itemG {
+  grid-row: 2;
+  grid-column: 2;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+}
+#itemH {
+  grid-row: 2;
+  grid-column: 3;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+}
+</style>
